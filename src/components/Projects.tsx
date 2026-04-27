@@ -10,6 +10,15 @@ interface Project {
   featured: boolean;
 }
 
+interface Collaboration {
+  title: string;
+  role: string;
+  description: string;
+  stack: string[];
+  github: string;
+  accessLink: string;
+}
+
 const projects: Project[] = [
   {
     title: 'Roblox × Discord Integration System',
@@ -21,9 +30,9 @@ const projects: Project[] = [
     featured: true,
   },
   {
-    title: 'EB & RP Map Framework (Fictício)',
+    title: 'EB & RP Map Framework ',
     description:
-      'Projeto fictício de framework para mapas EB e RP no Roblox, com sistema modular de zonas, eventos dinâmicos, economia básica, spawn inteligente e administração por permissões para escalar servidores com desempenho estável.',
+      'Projeto  de framework para mapas EB e RP no Roblox, com sistema modular de zonas, eventos dinâmicos, economia básica, spawn inteligente e administração por permissões para escalar servidores com desempenho estável.',
     tech: ['Roblox Lua', 'Map Design', 'Roleplay Systems', 'Optimization', 'Admin Tools'],
     github: '#',
     demo: '#',
@@ -55,6 +64,18 @@ const projects: Project[] = [
     github: 'https://github.com/safadaooofc/detroir',
     demo: '#',
     featured: false,
+  },
+];
+
+const collaborations: Collaboration[] = [
+  {
+    title: 'Bot de Whitelist & Advertências (Em andamento)',
+    role: 'Scripter / Bot Developer',
+    description:
+      'Desenvolvimento ativo da lógica de whitelist e sistema de advertências para Discord. Implementação focada em organização de permissões, fluxo de aprovação e moderação eficiente para a comunidade.',
+    stack: ['JavaScript', 'Discord Bot', 'Whitelist', 'Moderação'],
+    github: 'https://github.com/safadaooofc?tab=overview&from=2026-04-01&to=2026-04-26',
+    accessLink: 'https://discord.gg/wWqWwYsnkr',
   },
 ];
 
@@ -197,6 +218,72 @@ export function Projects() {
                 </div>
               </motion.div>
             ))}
+        </div>
+
+        {/* Collaborations */}
+        <motion.h3
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          className="text-lg font-semibold text-gray-300 mt-16 mb-8 flex items-center gap-3"
+        >
+          <span className="w-8 h-[2px] bg-primary rounded-full" />
+          Colaborações
+        </motion.h3>
+
+        <div className="grid md:grid-cols-1 gap-6">
+          {collaborations.map((collab, i) => (
+            <motion.div
+              key={collab.title}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: i * 0.1 }}
+              className="card-hover group p-6 rounded-xl bg-dark-800/40 border border-dark-600/30 hover:border-primary/20"
+            >
+              <div className="flex items-center justify-between mb-4">
+                <Folder className="text-primary" size={28} />
+                <div className="flex items-center gap-3">
+                  <a
+                    href={collab.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-gray-500 hover:text-primary transition-colors"
+                    aria-label="GitHub da colaboração"
+                  >
+                    <Github size={18} />
+                  </a>
+                  <a
+                    href={collab.accessLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-gray-500 hover:text-primary transition-colors"
+                    aria-label="Acessar servidor Discord"
+                  >
+                    <ExternalLink size={18} />
+                  </a>
+                </div>
+              </div>
+
+              <h4 className="text-lg font-bold text-white mb-1 group-hover:text-primary-light transition-colors">
+                {collab.title}
+              </h4>
+              <p className="text-sm text-primary mb-3">{collab.role}</p>
+              <p className="text-gray-400 text-sm mb-4 leading-relaxed">
+                {collab.description}
+              </p>
+              <div className="flex flex-wrap gap-2">
+                {collab.stack.map((item) => (
+                  <span
+                    key={item}
+                    className="text-xs font-mono text-gray-500"
+                  >
+                    {item}
+                  </span>
+                ))}
+              </div>
+            </motion.div>
+          ))}
         </div>
       </div>
     </section>
