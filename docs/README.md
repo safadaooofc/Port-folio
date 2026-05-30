@@ -12,9 +12,9 @@ Assistentes de IA devem consultar e atualizar esta pasta antes e depois de cada 
 
 | Documento | Descrição | Status |
 |-----------|-----------|--------|
-| [planos/01-redesign-terminal-discloud.md](./planos/01-redesign-terminal-discloud.md) | Redesign completo estilo terminal + Discloud + galeria + projetos | 🟡 Planejado |
-| [decisoes/](./decisoes/) | ADRs — decisões arquiteturais (criar conforme avançamos) | — |
-| [changelog/](./changelog/) | Registro do que foi feito em cada sessão | — |
+| [planos/01-redesign-terminal-discloud.md](./planos/01-redesign-terminal-discloud.md) | Redesign terminal + Discloud + galeria + projetos | 🟢 Pronto para implementar |
+| [dados/catalogo-projetos.md](./dados/catalogo-projetos.md) | Catálogo completo de projetos do Kiover | ✅ Atualizado |
+| [decisoes/01-preferencias-kiover.md](./decisoes/01-preferencias-kiover.md) | Platinum Discloud, cores CMD, papel Reuel | ✅ Aceito |
 
 ## Como usar
 

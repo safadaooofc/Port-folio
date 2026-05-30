@@ -1,7 +1,7 @@
 # Plano 01 — Redesign Terminal + Discloud + Galeria + Projetos
 
 **Criado:** 2026-05-30  
-**Status:** 🟡 Planejado  
+**Status:** 🟢 Pronto para implementar (Fase 0 dados concluída)  
 **Objetivo:** Transformar o portfólio numa experiência estilo terminal/CMD, com boot animado, scroll sincronizado, galeria de fotos, mais projetos centralizados e deploy na Discloud.
 
 ---
@@ -463,14 +463,15 @@ Port-folio/
 
 ## O que preciso do Kiover antes/durante
 
-| Item | Para quê |
-|------|----------|
-| Lista de projetos novos (nome, desc, links, tech) | Preencher `projects.ts` |
-| Fotos para galeria | Colocar em `public/gallery/` |
-| Subdomínio Discloud desejado | `discloud.config` ID |
-| Confirmar plano Platinum Discloud | Deploy |
-| Boot repetir toda visita ou só 1ª vez? | Comportamento BootScreen |
-| Verde puro CMD ou verde + amber? | Paleta final |
+| Item | Para quê | Status |
+|------|----------|--------|
+| Lista de projetos novos | `projects.ts` | ✅ Feito (`projetos.txt` + `projeto2.md`) |
+| Papel Reuel (EB + Capital MT) | Bio + trabalho atual | ✅ Feito |
+| Plano Platinum Discloud | Deploy | ✅ Confirmado |
+| Paleta terminal CMD | CSS | ✅ Verde/preto |
+| Fotos para galeria | `public/gallery/` | ⏳ Pendente |
+| Subdomínio portfólio | `discloud.config` ID | ⏳ Sugestão: `kiover` |
+| Links Roblox dos mapas | Botão "Jogar" | ⏳ Opcional |
 
 ---
 

@@ -1,0 +1,112 @@
+🌐 Site_regras_wl - TypeScript
+Link: https://github.com/safadaooofc/Site_regras_wl
+
+📊 Tamanho: 25.6 MB (MUITO GRANDE! Seu maior projeto!)
+📅 Criado há: 26 dias
+📅 Última atualização: Agora mesmo (30 de Maio 2026 - 19:11)
+🔗 Site ao vivo: https://reueleberp.discloud.app/
+Descrição: Site regras wl
+Status: 1 issue aberta em desenvolvimento
+Linguagem: TypeScript
+
+
+📌 Resumo Para Portfólio
+Seu perfil demonstra:
+
+✅ Fullstack development com TypeScript (projeto principal)
+✅ Frontend/Game Development com HTML/CSS/JavaScript
+✅ Backend com Python
+✅ Automação com bots JavaScript
+✅ Diversidade tecnológica - você explora múltiplas linguagens
+
+
+3. Jogo da Cobrinha - Versão Executável - HTML
+Link: https://github.com/safadaooofc/jogo_cobrinha_executavel
+
+📊 Tamanho: 8 KB
+📅 Última atualização: 6 de Fevereiro 2026
+Descrição: Versão otimizada do jogo da cobrinha com foco em performance e compatibilidade cross-browser.
+
+
+
+
+Para um portfólio, é fundamental focar no problema que você resolveu, na tecnologia utilizada e no impacto que essa solução gera. Abaixo, preparei um texto estruturado de forma profissional e atrativa para descrever o seu projeto.
+
+🏗️ Projeto: Sistema de Monitoramento e Integração Roblox-Discord
+Visão Geral
+Desenvolvi um ecossistema de monitoramento em tempo real que conecta a engine do Roblox (Luau) a um servidor Discord através de uma API intermediária em Node.js (Express). O sistema foi projetado para oferecer visibilidade total sobre a telemetria do servidor, interatividade social e ferramentas de moderação remota.
+
+O Desafio
+O objetivo foi eliminar a opacidade sobre o que acontece dentro do jogo, permitindo que administradores acompanhem eventos críticos (como combates, interações de mundo e movimentação de jogadores) e interajam com a comunidade diretamente pelo Discord, sem a necessidade de estarem logados no Roblox.
+
+Soluções Implementadas
+Pipeline de Eventos (Telemetria): Implementação de um sistema de logs assíncrono que captura eventos granulares (morte, spawn, chat, interação com portas) e os envia via HTTPS para um backend centralizado.
+
+Gestão de Dados Dinâmica: Desenvolvimento de um sistema de organização automatizado no Discord que utiliza tópicos por jogador, permitindo um rastreio histórico limpo e eficiente de cada usuário dentro do servidor.
+
+Chat Bidirecional Inteligente: Integração em tempo real entre o chat do jogo e o Discord, com filtragem de conteúdo e controle de acesso via cargos, garantindo uma comunicação fluida e segura entre as plataformas.
+
+Ferramentas de Auditoria: Criação de um sistema de exportação de dados (!log) que compila logs estruturados em formato JSON, facilitando a análise de comportamentos e métricas do servidor.
+
+Tecnologias Utilizadas
+Linguagens: Luau (Roblox), JavaScript (Node.js).
+
+Backend: Express.js, servido em infraestrutura em nuvem (Render).
+
+Integrações: Discord.js API, Roblox HttpService.
+
+Armazenamento: Estrutura de dados em JSON, com foco em escalabilidade para bancos de dados NoSQL.
+
+Impacto
+Moderação: Redução drástica no tempo de resposta a abusos ou bugs, permitindo moderação remota.
+
+Engajamento: Aumento na retenção de jogadores devido à integração social entre as plataformas.
+
+Analytics: Facilidade na identificação de gargalos no jogo (como áreas onde ocorrem muitas mortes) através da análise dos logs exportados.
+
+
+Título: Otimizando a Gestão de Comunidades de Roleplay
+
+Desafio:
+Gerenciar servidores de Roleplay no Roblox exige um controle rigoroso sobre os dados dos jogadores e uma comunicação rápida com a equipe de moderação, algo que as ferramentas nativas da plataforma nem sempre entregam de forma completa.
+
+A Solução:
+Criei uma solução "ponta a ponta" que une o ambiente de jogo a uma infraestrutura externa. O projeto resolve gargalos comuns, como a perda de dados dos usuários e a dificuldade de monitoramento remoto. Agora, a staff recebe alertas automáticos sobre ações suspeitas e pode gerenciar o servidor através de um painel administrativo intuitivo, enquanto o jogador tem seu progresso salvo com segurança e automatizado via bot de whitelist.
+
+O que aprendi:
+Este projeto foi um exercício intenso de arquitetura de sistemas, onde precisei conciliar a lógica client-side do Roblox com a estabilidade de um servidor Node.js, garantindo que a experiência do jogador não seja interrompida por latência ou falhas de salvamento.
+
+
+Abaixo estão listados os principais sistemas de minha autoria desenvolvidos, otimizados e implementados recentemente, focando em performance, imersão e jogabilidade multiplataforma (PC/Mobile).
+
+1. Core & Persistência de Dados
+Sistema de Salvamento Dinâmico: Implementação de persistência de dados em banco de dados para o armazenamento seguro de tempo de jogo, saldo financeiro (dinheiro) e status globais dos jogadores, eliminando falhas de sincronização.
+
+Gestão de Slots (Anti-AFK): Script automatizado para detecção de jogadores ausentes, garantindo a liberação de slots e otimizando a performance e o tráfego do servidor.
+
+2. Infraestrutura de Rede & Integrações (API)
+API de Whitelist Automatizada: Desenvolvimento e otimização de uma API de triagem e registro de jogadores.
+
+Sistema de Contingência via Discord Bot: Integração com bot para execução de comandos manuais de liberação de acesso (Whitelist) em caso de instabilidade na API principal, garantindo 100% de disponibilidade.
+
+3. Jogabilidade & Sistemas Temáticos (Gameplay)
+Heist System (Banco Roubável): Sistema avançado de assalto que exige itens específicos (como C4 e Lockpick) para invasão, integrado a um sistema de gerenciamento de inventário e áreas de crafting/farm.
+
+Logística Viária e Corporações: Mapeamento e configuração estrutural de bases para corporações (Polícia Rodoviária Federal, Polícia Federal e Polícia Penal), incluindo gerenciamento de frotas e spawns dinâmicos.
+
+Infraestrutura de Pedágios: Criação e posicionamento de barreiras viárias integradas ao mapa para futura implementação de bilhetagem.
+
+4. Otimização de Assets e Suporte Multiplataforma
+Compatibilidade Mobile: Adaptação, otimização de malha e scripts de transporte público (frotas de ônibus) para garantir total suporte e estabilidade para jogadores de dispositivos móveis.
+
+Level Design e Ambientação: Polimento visual e otimização de cenários para ganho de FPS, inclusão de novos pontos de interesse (Joalheria) e desenvolvimento de mecânicas de exploração (Easter Eggs ocultos no mapa).
+
+Tecnologias e Competências Aplicadas: * Desenvolvimento de Scripts (Gameplay/UI)
+
+Integração de APIs e Bots de Suporte
+
+Modelagem e Otimização de Mapa (Level Design)
+
+Otimização de Performance para Mobile
+
+Banco de Dados e Persistência
