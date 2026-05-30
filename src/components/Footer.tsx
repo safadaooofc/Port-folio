@@ -1,26 +1,13 @@
-import { Heart } from 'lucide-react';
-
 export function Footer() {
   return (
-    <footer className="relative py-8 px-6 border-t border-dark-600/30">
-      <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
-        <a href="#home" className="text-xl font-bold gradient-text font-mono">
-          &lt;Kiover /&gt;
-        </a>
-        <p className="text-sm text-gray-500 flex items-center gap-1">
-          Feito com <Heart size={14} className="text-red-500 fill-red-500" /> por Kiover (safadaoooofc) &copy; {new Date().getFullYear()}
-        </p>
-        <div className="flex items-center gap-6">
-          {['Início', 'Sobre', 'Projetos', 'Contato'].map((link) => (
-            <a
-              key={link}
-              href={`#${link === 'Início' ? 'home' : link.toLowerCase()}`}
-              className="text-xs text-gray-500 hover:text-primary-light transition-colors"
-            >
-              {link}
-            </a>
-          ))}
-        </div>
+    <footer className="relative py-6 px-4 md:px-6 border-t border-terminal-border">
+      <div className="max-w-3xl mx-auto flex flex-col md:flex-row items-center justify-between gap-3 text-xs text-terminal-muted">
+        <span>
+          <span className="text-terminal-green">[kiover@portfolio]</span> uptime: {new Date().getFullYear()}
+        </span>
+        <span>
+          made with {'<3'} by Kiover (safadaoooofc) | exit 0
+        </span>
       </div>
     </footer>
   );

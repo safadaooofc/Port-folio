@@ -1,16 +1,12 @@
 import { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X } from 'lucide-react';
+import { AnimatePresence, motion } from 'framer-motion';
+import { navLinks } from '@/data/nav';
 
-const navLinks = [
-  { name: 'Início', href: '#home' },
-  { name: 'Sobre', href: '#about' },
-  { name: 'Habilidades', href: '#skills' },
-  { name: 'Projetos', href: '#projects' },
-  { name: 'Contato', href: '#contact' },
-];
+interface NavbarProps {
+  activeSection?: string;
+}
 
-export function Navbar() {
+export function Navbar({ activeSection }: NavbarProps) {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
 
@@ -25,58 +21,64 @@ export function Navbar() {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.6 }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b ${
         scrolled
-          ? 'bg-dark-900/80 backdrop-blur-xl border-b border-dark-600/50'
-          : 'bg-transparent'
+          ? 'bg-terminal-bg/95 backdrop-blur-sm border-terminal-border'
+          : 'bg-transparent border-transparent'
       }`}
     >
-      <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
-        <a href="#home" className="text-2xl font-bold gradient-text font-mono">
-          &lt;Kiover /&gt;
+      <div className="max-w-6xl mx-auto px-4 md:px-6 py-3 flex items-center justify-between">
+        <a href="#home" className="text-terminal-green terminal-glow text-sm md:text-base font-bold">
+          kiover@portfolio:~$
         </a>
 
-        {/* Desktop Links */}
-        <div className="hidden md:flex items-center gap-8">
+        <div className="hidden md:flex items-center gap-1">
           {navLinks.map((link) => (
             <a
-              key={link.name}
+              key={link.id}
               href={link.href}
-              className="text-sm text-gray-400 hover:text-primary-light transition-colors duration-300 relative group"
+              className={`px-3 py-1.5 text-xs rounded transition-all duration-200 ${
+                activeSection === link.id
+                  ? 'text-terminal-green terminal-glow bg-terminal-green/10'
+                  : 'text-terminal-muted hover:text-terminal-green'
+              }`}
             >
-              {link.name}
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary group-hover:w-full transition-all duration-300" />
+              {link.command}
             </a>
           ))}
         </div>
 
-        {/* Mobile Toggle */}
         <button
-          className="md:hidden text-gray-400 hover:text-white transition-colors"
+          className="md:hidden text-terminal-muted hover:text-terminal-green transition-colors text-sm"
           onClick={() => setMobileOpen(!mobileOpen)}
         >
-          {mobileOpen ? <X size={24} /> : <Menu size={24} />}
+          {mobileOpen ? '[x]' : '[menu]'}
         </button>
       </div>
 
-      {/* Mobile Menu */}
       <AnimatePresence>
         {mobileOpen && (
           <motion.div
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-dark-800/95 backdrop-blur-xl border-b border-dark-600/50"
+            className="md:hidden bg-terminal-bg/98 border-b border-terminal-border"
           >
-            <div className="px-6 py-4 flex flex-col gap-4">
+            <div className="px-4 py-3 flex flex-col gap-1">
+              <div className="text-terminal-muted text-xs mb-2">kiover@portfolio:~$ help</div>
               {navLinks.map((link) => (
                 <a
-                  key={link.name}
+                  key={link.id}
                   href={link.href}
                   onClick={() => setMobileOpen(false)}
-                  className="text-gray-400 hover:text-primary-light transition-colors duration-300"
+                  className={`px-3 py-1.5 text-sm rounded transition-all ${
+                    activeSection === link.id
+                      ? 'text-terminal-green terminal-glow'
+                      : 'text-terminal-muted hover:text-terminal-green'
+                  }`}
                 >
-                  {link.name}
+                  <span className="text-terminal-text mr-2">&gt;</span>
+                  {link.command}
                 </a>
               ))}
             </div>

@@ -1,127 +1,104 @@
 import { motion } from 'framer-motion';
-import { ArrowDown, Github, MessageCircle, Mail } from 'lucide-react';
+import { Github, MessageCircle, Mail } from 'lucide-react';
+import { profile } from '@/data/profile';
+import { TerminalWindow } from './terminal/TerminalWindow';
+import { TerminalPrompt } from './terminal/TerminalPrompt';
+import { Cursor } from './terminal/Cursor';
 
 export function Hero() {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden"
+      className="relative min-h-screen flex items-center justify-center px-4 md:px-6"
     >
-      {/* Background Effects */}
-      <div className="blob w-96 h-96 bg-primary/30 top-20 -left-48 animate-pulse-glow" />
-      <div className="blob w-80 h-80 bg-accent/20 bottom-20 -right-40 animate-pulse-glow" style={{ animationDelay: '2s' }} />
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-dark-700/20 via-dark-900 to-dark-900" />
-
-      {/* Grid Pattern */}
-      <div
-        className="absolute inset-0 opacity-[0.03]"
-        style={{
-          backgroundImage: 'linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)',
-          backgroundSize: '60px 60px',
-        }}
-      />
-
-      <div className="relative z-10 text-center px-6 max-w-4xl mx-auto">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-        >
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-dark-500/50 bg-dark-800/50 backdrop-blur-sm mb-8">
-            <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
-            <span className="text-sm text-gray-400">Disponível para projetos</span>
-          </div>
-        </motion.div>
-
-        <motion.h1
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-          className="text-5xl md:text-7xl lg:text-8xl font-bold mb-6 leading-tight"
-        >
-          Olá, eu sou{' '}
-          <span className="gradient-text">Kiover</span>
-        </motion.h1>
-
-        <motion.p
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.6 }}
-          className="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto mb-4 font-mono"
-        >
-          <span className="text-primary">&gt;</span> Dev Roblox | Scripting e APIs
-        </motion.p>
-
-        <motion.p
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.7 }}
-          className="text-base md:text-lg text-gray-500 max-w-xl mx-auto mb-10"
-        >
-          Criando experiencias em Roblox com mapas Tycoon, EB, RP, sistemas escalaveis e integracoes de API.
-        </motion.p>
-
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.8 }}
-          className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12"
-        >
-          <a
-            href="#projects"
-            className="group px-8 py-3.5 bg-primary hover:bg-primary-dark text-white rounded-xl font-medium transition-all duration-300 glow hover:scale-105 flex items-center gap-2"
+      <div className="relative z-10 w-full max-w-3xl mx-auto pt-20">
+        <TerminalWindow title="kiover@portfolio — ~">
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
           >
-            Ver Projetos
-            <ArrowDown size={18} className="group-hover:translate-y-1 transition-transform" />
-          </a>
-          <a
-            href="#contact"
-            className="px-8 py-3.5 border border-dark-500 hover:border-primary/50 text-gray-300 rounded-xl font-medium transition-all duration-300 hover:bg-dark-700/50"
-          >
-            Entrar em Contato
-          </a>
-        </motion.div>
+            <TerminalPrompt command="whoami" />
+            <div className="mt-2 mb-6">
+              <h1 className="text-2xl md:text-4xl font-bold text-terminal-green terminal-glow-strong">
+                {profile.name}
+              </h1>
+              <p className="text-terminal-text mt-1">{profile.title}</p>
+              <p className="text-terminal-muted text-sm mt-1">{profile.tagline}</p>
+            </div>
+          </motion.div>
 
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.8, delay: 1 }}
-          className="flex items-center justify-center gap-6"
-        >
-          {[
-            { icon: Github, href: 'https://github.com/safadaooofc?tab=overview&from=2026-04-01&to=2026-04-26', label: 'GitHub' },
-            { icon: MessageCircle, href: 'https://discord.com/app', label: 'Discord (kiover)' },
-            { icon: Mail, href: 'mailto:paoteste40@gmail.com', label: 'Email' },
-          ].map(({ icon: Icon, href, label }) => (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.6, delay: 0.5 }}
+          >
+            <TerminalPrompt command="cat status.txt" />
+            <div className="mt-2 mb-6 flex items-center gap-2">
+              <span className="inline-block w-2 h-2 rounded-full bg-terminal-green animate-pulse" />
+              <span className="text-terminal-green">{profile.status}</span>
+            </div>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.6, delay: 0.8 }}
+          >
+            <TerminalPrompt command="ls links/" />
+            <div className="mt-3 flex flex-wrap gap-3">
+              {[
+                { icon: Github, href: profile.links.github, label: 'github/', color: 'text-terminal-blue' },
+                { icon: MessageCircle, href: profile.links.discord, label: 'discord/', color: 'text-terminal-amber' },
+                { icon: Mail, href: profile.links.email, label: 'email/', color: 'text-terminal-green' },
+              ].map(({ icon: Icon, href, label, color }) => (
+                <a
+                  key={label}
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`flex items-center gap-2 px-3 py-1.5 rounded border border-terminal-border hover:border-terminal-green/50 transition-all ${color} hover:terminal-glow`}
+                  aria-label={label}
+                >
+                  <Icon size={16} />
+                  <span className="text-sm">{label}</span>
+                </a>
+              ))}
+            </div>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.6, delay: 1.1 }}
+            className="mt-6 flex flex-wrap gap-4"
+          >
             <a
-              key={label}
-              href={href}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="p-3 rounded-xl border border-dark-600/50 bg-dark-800/30 text-gray-400 hover:text-primary hover:border-primary/30 transition-all duration-300 hover:scale-110"
-              aria-label={label}
+              href="#projects"
+              className="px-5 py-2 text-sm bg-terminal-green/10 border border-terminal-green/40 text-terminal-green rounded hover:bg-terminal-green/20 transition-all terminal-glow"
             >
-              <Icon size={20} />
+              [ ver projetos ]
             </a>
-          ))}
-        </motion.div>
-      </div>
+            <a
+              href="#contact"
+              className="px-5 py-2 text-sm border border-terminal-border text-terminal-muted rounded hover:border-terminal-green/30 hover:text-terminal-green transition-all"
+            >
+              [ contato ]
+            </a>
+          </motion.div>
 
-      {/* Scroll Indicator */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1.5 }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2"
-      >
-        <motion.div
-          animate={{ y: [0, 10, 0] }}
-          transition={{ duration: 2, repeat: Infinity }}
-          className="w-6 h-10 rounded-full border-2 border-dark-500 flex justify-center pt-2"
-        >
-          <div className="w-1 h-2 rounded-full bg-primary" />
-        </motion.div>
-      </motion.div>
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.6, delay: 1.3 }}
+            className="mt-6"
+          >
+            <TerminalPrompt>
+              <Cursor />
+            </TerminalPrompt>
+          </motion.div>
+        </TerminalWindow>
+      </div>
     </section>
   );
 }

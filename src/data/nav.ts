@@ -10,6 +10,6 @@ export const navLinks: NavLink[] = [
   { id: 'about', name: 'Sobre', href: '#about', command: 'cat about.md' },
   { id: 'skills', name: 'Habilidades', href: '#skills', command: 'ls ~/skills/' },
   { id: 'projects', name: 'Projetos', href: '#projects', command: 'ls ~/projects/' },
-  { id: 'gallery', name: 'Galeria', href: '#gallery', command: 'ls ~/gallery/' },
+  { id: 'community', name: 'Comunidade', href: '#community', command: 'ls ~/community/' },
   { id: 'contact', name: 'Contato', href: '#contact', command: 'mail --compose' },
 ];
