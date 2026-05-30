@@ -134,3 +134,6 @@ dist
 .yarn/build-state.yml
 .yarn/install-state.gz
 .pnp.*
+eni_lime.txt
+eni_launcher.bat
+corial_style.txt
