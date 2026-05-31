@@ -64,6 +64,7 @@ Sistemas desenvolvidos/otimizados (autoria Kiover):
 | Jogo da Cobrinha (web) | https://github.com/safadaooofc/jogo_cobrinha | — | HTML, CSS, JS |
 | Jogo da Cobrinha (executável) | https://github.com/safadaooofc/jogo_cobrinha_executavel | — | HTML |
 | detroir | https://github.com/safadaooofc/detroir | — | JavaScript |
+| Discord RPC — YT Music | https://github.com/safadaooofc/discord-rpc-Kiover | — | JS, Python, WS |
 | EB & RP Map Framework | — | — | Roblox Lua |
 
 ---

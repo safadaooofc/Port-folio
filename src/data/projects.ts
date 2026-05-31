@@ -78,6 +78,17 @@ export const projects: Project[] = [
     category: 'bot',
   },
   {
+    id: 'discord-rpc-kiover',
+    title: 'Discord RPC — YouTube Music Bridge',
+    description:
+      'Bridge de integração para exibir atividade do YouTube Music no Discord via WebSocket, extensão de browser e cliente RPC. Inclui instalador automático e suporte a estados de play/pause.',
+    tech: ['JavaScript', 'Python', 'Node.js', 'WebSockets', 'Chrome Extension'],
+    github: 'https://github.com/safadaooofc/discord-rpc-Kiover',
+    featured: false,
+    status: 'arquivado',
+    category: 'outro',
+  },
+  {
     id: 'eb-rp-framework',
     title: 'EB & RP Map Framework',
     description:
