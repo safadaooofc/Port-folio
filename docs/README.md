@@ -12,9 +12,12 @@ Assistentes de IA devem consultar e atualizar esta pasta antes e depois de cada 
 
 | Documento | Descrição | Status |
 |-----------|-----------|--------|
-| [planos/01-redesign-terminal-discloud.md](./planos/01-redesign-terminal-discloud.md) | Redesign terminal + Discloud + galeria + projetos | 🟢 Pronto para implementar |
+| [planos/02-navegacao-terminal-discord-som.md](./planos/02-navegacao-terminal-discord-som.md) | **ATIVO** — Nav imersiva, som, CMD visual (sem webhook) | 🟡 Implementar |
+| [planos/01-redesign-terminal-discloud.md](./planos/01-redesign-terminal-discloud.md) | Base terminal + Discloud + galeria | ✅ Base implementada |
+| [decisoes/02-cmd-navegacao-imersiva.md](./decisoes/02-cmd-navegacao-imersiva.md) | CMD cinza, sem scroll-spy, som | ✅ Aceito |
+| [decisoes/03-sem-webhook-contato.md](./decisoes/03-sem-webhook-contato.md) | Webhook Discord removido | ✅ Aceito |
 | [dados/catalogo-projetos.md](./dados/catalogo-projetos.md) | Catálogo completo de projetos do Kiover | ✅ Atualizado |
-| [decisoes/01-preferencias-kiover.md](./decisoes/01-preferencias-kiover.md) | Platinum Discloud, cores CMD, papel Reuel | ✅ Aceito |
+| [decisoes/01-preferencias-kiover.md](./decisoes/01-preferencias-kiover.md) | Platinum Discloud, papel Reuel | ✅ Aceito |
 
 ## Como usar
 

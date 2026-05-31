@@ -138,3 +138,6 @@ eni_lime.txt
 eni_launcher.bat
 corial_style.txt
 *.exe
+
+# Pasta local de implementação (rascunhos, assets, notas — não versionar)
+emplementar/

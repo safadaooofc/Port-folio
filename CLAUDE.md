@@ -14,7 +14,9 @@ Este arquivo orienta assistentes de IA (Claude, Cursor, etc.) sobre o que é est
 | `docs/decisoes/` | Decisões arquiteturais (ADRs) |
 | `docs/changelog/` | O que foi feito em cada sessão (`YYYY-MM-DD.md`) |
 
-**Plano ativo:** [docs/planos/01-redesign-terminal-discloud.md](./docs/planos/01-redesign-terminal-discloud.md) — redesign terminal + Discloud + galeria + scroll-spy.
+**Plano ativo:** [docs/planos/02-navegacao-terminal-discord-som.md](./docs/planos/02-navegacao-terminal-discord-som.md) — navegação imersiva por terminal, som de teclado, visual CMD/PowerShell (**sem webhook**).
+
+Plano anterior (base): [docs/planos/01-redesign-terminal-discloud.md](./docs/planos/01-redesign-terminal-discloud.md)
 
 Fluxo para o assistente:
 1. Ler o plano ativo em `docs/planos/`
@@ -55,18 +57,15 @@ Objetivo: mostrar quem é o desenvolvedor, suas habilidades, projetos (principal
 
 Não há backend de API hoje. Para Discloud será adicionado `server.js` (Express estático apenas).
 
-### Roadmap visual (em andamento)
+### Roadmap visual (plano 02 — próximo)
 
-Transformar o site em **experiência terminal/CMD**:
-- Boot screen: `npm run kiover-portfolio`
-- Fonte JetBrains Mono, paleta verde/preto
-- Seções como comandos (`cat`, `ls`, `cd`)
-- Nova seção **Galeria** (`~/gallery/`)
-- Scroll-spy na navbar
-- Projetos centralizados em `src/data/`
-- Hospedagem na Discloud (`TYPE=site`, plano Platinum+)
+- **Visual CMD/PowerShell:** preto + cinza, Consolas, sem glow verde
+- **Navegação imersiva:** clique na categoria → terminal digita comando → troca view (**sem scroll-spy**)
+- **Som de teclado:** typing nas transições + toggle mute
+- **Contato:** links diretos (mailto, Discord, GitHub) — **sem webhook**
+- **Deploy Discloud:** Express estático servindo `dist/` apenas
 
-Detalhes completos: `docs/planos/01-redesign-terminal-discloud.md`.
+Detalhes: `docs/planos/02-navegacao-terminal-discord-som.md`
 
 ---
 
@@ -236,7 +235,8 @@ Docs oficiais: https://docs.discloud.com/how-to-host/websites-and-apis
 - **Documentar sempre:** planos, decisões e trabalho concluído → `docs/`.
 - **Seguir o plano ativo** em `docs/planos/` antes de inventar arquitetura nova.
 - **Escopo mínimo:** mudanças focadas no pedido; não refatorar o que não foi solicitado.
-- **Identidade visual (transição):** migrar para tema **terminal** (verde `#00ff41`, preto `#0c0c0c`, JetBrains Mono). Não usar mais roxo/ciano/glassmorphism após o redesign.
+- **Identidade visual (plano 02):** CMD/PowerShell — preto `#0c0c0c`, cinza `#cccccc`, Consolas. **Não usar verde Matrix/glow** como cor dominante.
+- **Navegação:** view única por categoria com terminal typing — **não usar scroll-spy**.
 - **Conteúdo em pt-BR** salvo pedido explícito de outro idioma.
 - **Não commitar** sem o usuário pedir.
 - **Não inventar projetos ou links** — usar dados reais do GitHub/perfil ou perguntar.
@@ -247,14 +247,16 @@ Docs oficiais: https://docs.discloud.com/how-to-host/websites-and-apis
 
 ## Estado atual / pendências conhecidas
 
-### Redesign terminal (plano 01)
-- [ ] Tema terminal completo
-- [ ] Boot screen `npm run kiover-portfolio`
-- [ ] `src/data/` centralizado
-- [ ] Seção Galeria
-- [ ] Scroll-spy
-- [ ] Deploy Discloud (Express + `discloud.config`)
-- [ ] Mais projetos com links reais (aguardar lista do Kiover)
+### Redesign terminal (plano 01 — base feita)
+- [x] Boot screen, src/data/, tema terminal base, scroll-spy (será removido no plano 02)
+
+### Plano 02 — navegação imersiva + Discord + som
+- [ ] Visual CMD/PowerShell (preto + cinza)
+- [ ] Navegação por terminal typing (sem scroll-spy)
+- [ ] Som de teclado + toggle mute
+- [ ] Contato só com links (sem formulário backend)
+- [ ] server.js estático + discloud.config
+- [ ] Kiover: subdomínio Discloud
 
 ### Outros
 - [ ] Formulário de contato não envia mensagens de verdade
