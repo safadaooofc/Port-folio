@@ -1,0 +1,35 @@
+---
+description: Contexto e regras do portfólio Kiover — ler CURSOR.md e docs/planos/ antes de implementar
+alwaysApply: true
+---
+
+# Portfólio Kiover — regras Cursor
+
+## Antes de codar
+
+1. Ler `CURSOR.md` na raiz do projeto
+2. Plano 02 concluído — referência: `docs/planos/02-navegacao-terminal-discord-som.md`
+3. Deploy Discloud: `docs/deploy/discloud.md` + `preparar-discloud.bat`
+4. Consultar `docs/dados/catalogo-projetos.md` para conteúdo real
+
+## Regras fixas
+
+- Conteúdo em **pt-BR**
+- Dados em `src/data/` — não hardcodar projetos nos componentes
+- **Escopo mínimo** — só o que foi pedido
+- **Não commitar** sem pedido explícito
+- **Sem webhook Discord** — contato só links (ADR 03)
+- **Sem scroll-spy** no plano 02 — usar navegação por view + terminal typing
+- Visual alvo: **CMD/PowerShell** preto `#0c0c0c` + cinza `#cccccc` — não verde Matrix
+- Documentar trabalho em `docs/changelog/YYYY-MM-DD.md`
+- Pasta `emplementar/` é gitignored — não versionar
+
+## Stack
+
+React 19 + TypeScript + Vite 7 + Tailwind v4 + Framer Motion. Alias `@/` → `src/`.
+
+## Dev / Deploy
+
+- Dev: `iniciar-site.bat` ou `npm run dev` → localhost:5173
+- Produção local: `npm run build && npm start` → localhost:8080
+- Discloud: `preparar-discloud.bat` → upload `portfolio-discloud.zip`

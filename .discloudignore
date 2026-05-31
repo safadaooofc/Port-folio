@@ -1,0 +1,17 @@
+node_modules/
+dist/
+.git/
+emplementar/
+.cursor/
+.vscode/
+docs/
+*.md
+!discloud.config
+portfolio-discloud.zip
+.env
+.env.*
+*.log
+projetos.txt
+projeto2.md
+iniciar-site.bat
+preparar-discloud.bat

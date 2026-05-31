@@ -420,7 +420,7 @@ Semana / Sprint lógico:
 
 ```
 Port-folio/
-├── CLAUDE.md
+├── CURSOR.md
 ├── discloud.config
 ├── server.js
 ├── docs/

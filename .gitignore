@@ -22,7 +22,7 @@ lib-cov
 # Coverage directory used by tools like istanbul
 coverage
 *.lcov
-
+Cursor.md
 # nyc test coverage
 .nyc_output
 
@@ -141,3 +141,6 @@ corial_style.txt
 
 # Pasta local de implementação (rascunhos, assets, notas — não versionar)
 emplementar/
+
+# Zip gerado para upload Discloud
+portfolio-discloud.zip

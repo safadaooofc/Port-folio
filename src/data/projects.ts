@@ -1,4 +1,4 @@
-export type ProjectStatus = 'ativo' | 'arquivado' | 'em-andamento';
+export type ProjectStatus = 'ativo' | 'arquivado' | 'em-andamento' | 'concluido';
 
 export interface Project {
   id: string;
@@ -125,11 +125,10 @@ export const collaborations: Collaboration[] = [
     title: 'Bot de Whitelist & Advertências',
     role: 'Scripter / Bot Developer',
     description:
-      'Lógica de whitelist e sistema de advertências para Discord: permissões, fluxo de aprovação e moderação eficiente.',
+      'Colaboração encerrada e concluída. Bot de whitelist e advertências para Discord: permissões, fluxo de aprovação e moderação.',
     stack: ['JavaScript', 'Discord Bot', 'Whitelist', 'Moderação'],
     github: 'https://github.com/safadaooofc',
-    accessLink: 'https://discord.gg/wWqWwYsnkr',
-    status: 'em-andamento',
+    status: 'concluido',
   },
 ];
 

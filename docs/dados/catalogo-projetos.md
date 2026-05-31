@@ -74,15 +74,14 @@ Sistemas desenvolvidos/otimizados (autoria Kiover):
 
 - **Papel:** Scripter / Bot Developer
 - **Stack:** JavaScript, Discord Bot
-- **Discord:** https://discord.gg/wWqWwYsnkr
-- **Status:** Em andamento
+- **Status:** **Concluído** — colaboração encerrada
 
 ---
 
-## Decisões confirmadas (2026-05-30)
+## Decisões confirmadas (2026-05-30 / atualizado 2026-05-31)
 
 | Item | Valor |
 |------|-------|
 | Discloud | Plano **Platinum** confirmado |
-| Paleta | Estilo **terminal CMD** — verde `#00ff41` em fundo `#0c0c0c` |
-| Subdomínio portfólio | A definir (ex: `kiover.discloud.app`) — separado de `reueleberp` |
+| Paleta | Estilo **CMD/PowerShell** — preto `#0c0c0c` + cinza `#cccccc` |
+| Subdomínio portfólio | **`kiover.discloud.app`** (`ID=kiover` no `discloud.config`) |

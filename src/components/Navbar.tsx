@@ -1,55 +1,53 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { navLinks } from '@/data/nav';
+import { useNavigation, type ViewId } from '@/context/NavigationContext';
 
-interface NavbarProps {
-  activeSection?: string;
-}
-
-export function Navbar({ activeSection }: NavbarProps) {
-  const [scrolled, setScrolled] = useState(false);
+export function Navbar() {
+  const { activeView, navigateTo } = useNavigation();
   const [mobileOpen, setMobileOpen] = useState(false);
 
-  useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 50);
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  const handleNavigate = (id: ViewId) => {
+    navigateTo(id);
+    setMobileOpen(false);
+  };
 
   return (
     <motion.nav
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.6 }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b ${
-        scrolled
-          ? 'bg-terminal-bg/95 backdrop-blur-sm border-terminal-border'
-          : 'bg-transparent border-transparent'
-      }`}
+      className="fixed top-0 left-0 right-0 z-50 bg-terminal-bg/95 backdrop-blur-sm border-b border-terminal-border"
     >
       <div className="max-w-6xl mx-auto px-4 md:px-6 py-3 flex items-center justify-between">
-        <a href="#home" className="text-terminal-green terminal-glow text-sm md:text-base font-bold">
-          kiover@portfolio:~$
-        </a>
+        <button
+          type="button"
+          onClick={() => handleNavigate('home')}
+          className="text-terminal-text text-sm md:text-base font-bold hover:text-terminal-accent transition-colors"
+        >
+          PS C:\Users\kiover\portfolio&gt;
+        </button>
 
         <div className="hidden md:flex items-center gap-1">
           {navLinks.map((link) => (
-            <a
+            <button
               key={link.id}
-              href={link.href}
+              type="button"
+              onClick={() => handleNavigate(link.id as ViewId)}
               className={`px-3 py-1.5 text-xs rounded transition-all duration-200 ${
-                activeSection === link.id
-                  ? 'text-terminal-green terminal-glow bg-terminal-green/10'
-                  : 'text-terminal-muted hover:text-terminal-green'
+                activeView === link.id
+                  ? 'text-terminal-text bg-terminal-surface border border-terminal-border'
+                  : 'text-terminal-muted hover:text-terminal-text'
               }`}
             >
               {link.command}
-            </a>
+            </button>
           ))}
         </div>
 
         <button
-          className="md:hidden text-terminal-muted hover:text-terminal-green transition-colors text-sm"
+          type="button"
+          className="md:hidden text-terminal-muted hover:text-terminal-text transition-colors text-sm"
           onClick={() => setMobileOpen(!mobileOpen)}
         >
           {mobileOpen ? '[x]' : '[menu]'}
@@ -65,21 +63,21 @@ export function Navbar({ activeSection }: NavbarProps) {
             className="md:hidden bg-terminal-bg/98 border-b border-terminal-border"
           >
             <div className="px-4 py-3 flex flex-col gap-1">
-              <div className="text-terminal-muted text-xs mb-2">kiover@portfolio:~$ help</div>
+              <div className="text-terminal-muted text-xs mb-2">PS C:\Users\kiover\portfolio&gt; help</div>
               {navLinks.map((link) => (
-                <a
+                <button
                   key={link.id}
-                  href={link.href}
-                  onClick={() => setMobileOpen(false)}
-                  className={`px-3 py-1.5 text-sm rounded transition-all ${
-                    activeSection === link.id
-                      ? 'text-terminal-green terminal-glow'
-                      : 'text-terminal-muted hover:text-terminal-green'
+                  type="button"
+                  onClick={() => handleNavigate(link.id as ViewId)}
+                  className={`text-left px-3 py-1.5 text-sm rounded transition-all ${
+                    activeView === link.id
+                      ? 'text-terminal-text bg-terminal-surface'
+                      : 'text-terminal-muted hover:text-terminal-text'
                   }`}
                 >
-                  <span className="text-terminal-text mr-2">&gt;</span>
+                  <span className="text-terminal-muted mr-2">&gt;</span>
                   {link.command}
-                </a>
+                </button>
               ))}
             </div>
           </motion.div>

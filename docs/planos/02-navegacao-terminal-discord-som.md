@@ -2,7 +2,7 @@
 
 **Criado:** 2026-05-30  
 **Atualizado:** 2026-05-30 — webhook Discord **removido** por decisão do Kiover  
-**Status:** 🟡 Pronto para implementar  
+**Status:** ✅ Concluído (2026-05-31)  
 **Depende de:** Plano 01 (base terminal já implementada)  
 **Objetivo:** Navegação imersiva via terminal (sem scroll-spy), som de teclado e visual CMD/PowerShell profissional (preto + cinza). Deploy Discloud com Express estático apenas.
 
@@ -228,27 +228,27 @@ Port-folio/
 ## Checklist
 
 ### Visual
-- [ ] Preto + cinza, sem glow verde
-- [ ] TerminalWindow CMD/PowerShell
-- [ ] Consolas
+- [x] Preto + cinza, sem glow verde
+- [x] TerminalWindow CMD/PowerShell
+- [x] Consolas
 
 ### Navegação
-- [ ] Clique → terminal digita → troca view
-- [ ] scroll-spy removido
-- [ ] View única por vez
+- [x] Clique → terminal digita → troca view
+- [x] scroll-spy removido
+- [x] View única por vez
 
 ### Som
-- [ ] Teclado nas transições
-- [ ] Toggle mute
+- [x] Teclado nas transições
+- [x] Toggle mute
 
 ### Contato
-- [ ] Links mailto / Discord / GitHub
-- [ ] Sem webhook, sem POST /api
+- [x] Links mailto / Discord / GitHub
+- [x] Sem webhook, sem POST /api
 
 ### Deploy
-- [ ] server.js estático
-- [ ] discloud.config
-- [ ] Subdomínio Discloud confirmado
+- [x] server.js estático
+- [x] discloud.config
+- [ ] Subdomínio Discloud confirmado no painel (`kiover`)
 
 ---
 

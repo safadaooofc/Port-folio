@@ -5,5 +5,5 @@ interface CursorProps {
 }
 
 export function Cursor({ className }: CursorProps) {
-  return <span className={cn('terminal-cursor text-terminal-green', className)}>_</span>;
+  return <span className={cn('terminal-cursor text-terminal-text', className)}>_</span>;
 }
