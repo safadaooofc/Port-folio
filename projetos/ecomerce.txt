@@ -1,0 +1,28 @@
+🍰 Alma Criativa Confeitaria - E-commerce & Configurator
+Desenvolvi um e-commerce full-stack moderno para a Alma Criativa Confeitaria, uma plataforma completa que integra um sistema de loja online com configurador interativo de produtos personalizados.
+
+Tecnologias Principais
+Frontend: React 19, TypeScript, Tailwind CSS, Vite
+Linguagens: TypeScript (53.8%), JavaScript (23.1%), HTML (14.8%), CSS (8.3%)
+Integrações: Mercado Pago (pagamentos), Nominatim OpenStreetMap (geolocalização), Framer Motion (animações)
+Funcionalidades Implementadas
+1. Sistema de Pagamento Transparente (Mercado Pago)
+
+Implementei checkout com duas modalidades: Pix com QR Code dinâmico gerado em Base64 + sistema de polling para confirmação automática (4s) e cartão de crédito com redirecionamento seguro
+Desenvolvi webhook listener pronto para receber notificações de alteração de status do Mercado Pago
+2. Motor de Cálculo de Frete Inteligente
+
+Sistema de geolocalização que resolve endereços via Nominatim API, calcula distância em linha reta até a sede (Osasco - SP) e aplica tarifa dinâmica
+Integração com 3 operadoras (Entrega Própria, 99 Entrega, Lalamove) com preços base customizáveis + taxa de R$ 0,50/km
+3. Configurador Avançado de Produtos
+
+Monte seu Bolo: Seletor interativo com tamanho, massa, recheios, adicionais e tema personalizado
+Monte sua Festa: Criador de combos completos (Kit Festa) com bolo customizado, doces e salgados
+Sistema de Calendário: Bloqueio automático com antecedência mínima (2 dias para pedidos normais, 5 dias para kits de festa)
+4. Arquitetura Escalável
+
+Build otimizado com Vite para produção
+Serverless-ready (compatível com Netlify e Vercel)
+Componentes reutilizáveis com TypeScript para type-safety
+Resultado
+Uma plataforma robusta, responsiva e centrada na experiência do usuário, capaz de processar pedidos personalizados com alta precisão de dados geográficos e pagamentos seguros.

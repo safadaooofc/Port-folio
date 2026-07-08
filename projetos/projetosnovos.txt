@@ -1,0 +1,51 @@
+🤖 Caixa de Comandos - Bot de Discord Multifuncional
+Desenvolvi um bot de Discord robusto e modular para a Rede Reuel, atuando como central de controle automatizada para servidores de EB (Exército Brasileiro) e RP (Roleplay). O projeto foi construído com arquitetura profissional usando Cogs, permitindo fácil expansão e manutenção.
+
+Tecnologias Utilizadas
+Linguagem: Python 3.10+ (99.6%)
+Framework: discord.py
+Deployment: Discloud
+Arquitetura: Modular com sistema de Cogs
+Funcionalidades Implementadas
+🛡️ Administração e Moderação
+
+Sistema completo de moderação: limpeza de mensagens, expulsão, banimento e timeout de membros
+Sistema de logs automatizado que registra todas as ações administrativas em canal dedicado
+Bloqueio/desbloqueio dinâmico de canais
+🌐 Webhooks e Utilitários Avançados
+
+Sistema de webhook com disparo de JSON formatado
+Extração de estrutura JSON de mensagens
+Listagem e gerenciamento de webhooks ativos
+👥 Comunidade e Integração
+
+Sistema de sugestões com votação por reações
+Anúncios formatados com pingens customizáveis
+Informações de usuário e estatísticas de servidor em tempo real
+🎮 Entretenimento
+
+Mini-games interativos: cara ou coroa, dados virtuais, desafios matemáticos
+"Jogo do Milhão" com sistema de ranking
+Sistema de interações com GIFs (abraços, tapas, etc)
+⚙️ Configuração Sem Código
+
+Todos os parâmetros configuram via slash commands diretos no Discord
+Definição de canais de log, boas-vindas, sugestões e cargos automáticos
+Sistema totalmente gerenciável via interface Discord
+Resultado
+Um bot production-ready com mais de 20+ comandos funcionais, arquitetura extensível e sistema de logging robusto para manter ordem e engajamento em servidores grandes.
+
+💬 interactive BOT
+Bot em desenvolvimento construído com JavaScript, focado em fornecer funcionalidades automatizadas e interativas para comunidades Discord. Projeto experimental com base sólida para expansão.
+
+Tecnologias Utilizadas
+Linguagem: JavaScript (100%)
+Ambiente: Node.js
+Foco: Automação e interações Discord
+🗂️ Coletor de Arquivos - Token Generator & Collector
+Utilitário especializado desenvolvido em JavaScript para coleta e geração automática de tokens, com foco em automação de processos de arquivo. Ferramenta leve e eficiente para integração em pipelines de automação.
+
+Tecnologias Utilizadas
+Linguagem: JavaScript (100%)
+Foco: Coleta de tokens e gerenciamento de arquivos
+Aplicação: Automação de processos
