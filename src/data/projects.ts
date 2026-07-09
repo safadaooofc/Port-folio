@@ -24,31 +24,19 @@ export interface Collaboration {
   status: ProjectStatus;
 }
 
-/** Mapas Roblox — trabalho atual na Reuel */
+/** Trabalho Atual */
 export const activeWork: Project[] = [
   {
-    id: 'capital-mt-rp',
-    title: 'Capital do Mato Grosso Roleplay',
+    id: 'alma-criativa-ecomerce',
+    title: 'Alma Criativa Confeitaria - E-commerce',
     description:
-      'Mapa de roleplay da filial RP (Reuel). Sub-dono e chefe de desenvolvimento: persistência de dados, anti-AFK, API whitelist com bot contingência, heist system, bases de corporações (PRF, PF, Penal), pedágios, transporte mobile e otimização FPS.',
-    tech: ['Roblox Lua', 'Roleplay', 'API', 'Level Design', 'Mobile'],
+      'Trabalhando atualmente nele em fase final. Plataforma E-commerce full-stack moderna com sistema de loja online e configurador interativo de produtos personalizados. Inclui checkout transparente via Mercado Pago, webhook, e motor de cálculo de frete inteligente.',
+    tech: ['React 19', 'TypeScript', 'Tailwind CSS', 'Vite', 'Mercado Pago API'],
     featured: true,
     status: 'em-andamento',
-    role: 'Sub-dono · Chefe de Desenvolvimento',
-    category: 'roblox',
-    demo: 'https://reueleberp.discloud.app',
-  },
-  {
-    id: 'eb-reuel',
-    title: 'Exército Brasileiro do Reuel',
-    description:
-      'Mapa EB da filial Reuel. Sub-dono e chefe de desenvolvimento: recrutamento, sistema de patentes, regulamento militar integrado ao site e infraestrutura de servidor escalável.',
-    tech: ['Roblox Lua', 'EB', 'Roleplay', 'Admin Tools'],
-    featured: true,
-    status: 'em-andamento',
-    role: 'Sub-dono · Chefe de Desenvolvimento',
-    category: 'roblox',
-    demo: 'https://reueleberp.discloud.app/regras/eb',
+    role: 'Desenvolvedor Full-Stack',
+    category: 'web',
+    demo: 'https://almacriativa.netlify.app',
   },
 ];
 
@@ -57,46 +45,91 @@ export const projects: Project[] = [
     id: 'reuel-site',
     title: 'Reuel — Site institucional',
     description:
-      'Site oficial da Reuel: regras RP/EB, painel admin CMS, login Discord OAuth2, auto-join nos servidores, slash commands (/add-admin, /setup-logs), logs automáticos e widget de jogadores online. Deploy na Discloud.',
+      'Site oficial da Reuel (finalizado e encerrado pelo dono, servidor descontinuado): regras RP/EB, painel admin CMS, login Discord OAuth2.',
     tech: ['React', 'TypeScript', 'Express', 'Discord OAuth', 'Discloud', 'Tailwind'],
     github: 'https://github.com/safadaooofc/Site_regras_wl',
-    demo: 'https://reueleberp.discloud.app',
-    featured: true,
-    status: 'em-andamento',
+    demo: 'https://capitalmt.netlify.app',
+    featured: false,
+    status: 'concluido',
     role: 'Desenvolvedor principal',
     category: 'web',
+  },
+  {
+    id: 'capital-mt-rp',
+    title: 'Capital do Mato Grosso Roleplay',
+    description:
+      'Mapa de roleplay (finalizado e encerrado pelo dono). Persistência de dados, anti-AFK, API whitelist com bot.',
+    tech: ['Roblox Lua', 'Roleplay', 'API', 'Level Design', 'Mobile'],
+    featured: false,
+    status: 'concluido',
+    role: 'Sub-dono · Chefe de Desenvolvimento',
+    category: 'roblox',
+    demo: 'https://capitalmt.netlify.app',
+  },
+  {
+    id: 'eb-reuel',
+    title: 'Exército Brasileiro do Reuel',
+    description:
+      'Mapa EB (finalizado e descontinuado, encerrado pelo dono). Recrutamento, sistema de patentes, regulamento militar.',
+    tech: ['Roblox Lua', 'EB', 'Roleplay', 'Admin Tools'],
+    featured: false,
+    status: 'concluido',
+    role: 'Sub-dono · Chefe de Desenvolvimento',
+    category: 'roblox',
+    demo: 'https://capitalmt.netlify.app',
   },
   {
     id: 'roblox-discord-integration',
     title: 'Roblox × Discord — Monitoramento em tempo real',
     description:
-      'Ecossistema de telemetria Luau → Node.js → Discord: logs de mortes, spawn, chat e interações; chat bidirecional com permissões; tópicos por jogador; exportação JSON; backup Google Drive a cada 15s.',
+      'Ecossistema de telemetria (finalizado e encerrado pelo dono). Logs de mortes, chat e interações.',
     tech: ['Roblox Lua', 'Node.js', 'Express', 'Discord.js', 'Webhooks'],
     github: 'https://github.com/safadaooofc',
-    featured: true,
-    status: 'ativo',
+    demo: 'https://capitalmt.netlify.app',
+    featured: false,
+    status: 'concluido',
     category: 'bot',
   },
   {
-    id: 'discord-rpc-kiover',
-    title: 'Discord RPC — YouTube Music Bridge',
+    id: 'caixa-de-comandos',
+    title: 'Caixa de Comandos - Bot de Discord',
     description:
-      'Bridge de integração para exibir atividade do YouTube Music no Discord via WebSocket, extensão de browser e cliente RPC. Inclui instalador automático e suporte a estados de play/pause.',
-    tech: ['JavaScript', 'Python', 'Node.js', 'WebSockets', 'Chrome Extension'],
-    github: 'https://github.com/safadaooofc/discord-rpc-Kiover',
+      'Bot de Discord robusto e modular para a Rede Reuel (concluido). Sistema completo de administração, moderação e utilitários usando Cogs no discord.py.',
+    tech: ['Python', 'discord.py', 'Discloud', 'Bot'],
+    featured: false,
+    status: 'concluido',
+    category: 'bot',
+  },
+  {
+    id: 'interactive-bot',
+    title: 'Interactive BOT',
+    description:
+      'Bot em desenvolvimento focado em fornecer funcionalidades automatizadas e interativas para comunidades Discord.',
+    tech: ['JavaScript', 'Node.js', 'Discord.js'],
+    featured: false,
+    status: 'concluido',
+    category: 'bot',
+  },
+  {
+    id: 'coletor-tokens',
+    title: 'Coletor de Arquivos - Token Generator',
+    description:
+      'Utilitário especializado para coleta e geração automática de tokens, com foco em automação de processos.',
+    tech: ['JavaScript', 'Node.js', 'Automação'],
     featured: false,
     status: 'arquivado',
     category: 'outro',
   },
   {
-    id: 'eb-rp-framework',
-    title: 'EB & RP Map Framework',
+    id: 'discord-rpc-kiover',
+    title: 'Discord RPC — YouTube Music Bridge',
     description:
-      'Framework modular para mapas EB e RP: zonas, eventos dinâmicos, economia, spawn inteligente e administração por permissões.',
-    tech: ['Roblox Lua', 'Map Design', 'Roleplay', 'Optimization'],
+      'Bridge de integração para exibir atividade do YouTube Music no Discord via WebSocket, extensão de browser e cliente RPC.',
+    tech: ['JavaScript', 'Python', 'Node.js', 'WebSockets', 'Chrome Extension'],
+    github: 'https://github.com/safadaooofc/discord-rpc-Kiover',
     featured: false,
-    status: 'ativo',
-    category: 'roblox',
+    status: 'arquivado',
+    category: 'outro',
   },
   {
     id: 'jogo-cobrinha',
@@ -108,29 +141,18 @@ export const projects: Project[] = [
     status: 'arquivado',
     category: 'game',
   },
-  {
-    id: 'jogo-cobrinha-exe',
-    title: 'Jogo da Cobrinha — Executável',
-    description: 'Versão otimizada do jogo da cobrinha com foco em performance e compatibilidade cross-browser.',
-    tech: ['HTML', 'JavaScript'],
-    github: 'https://github.com/safadaooofc/jogo_cobrinha_executavel',
-    featured: false,
-    status: 'arquivado',
-    category: 'game',
-  },
-  {
-    id: 'detroir',
-    title: 'detroir',
-    description: 'Projeto em JavaScript para experimentos e funcionalidades personalizadas.',
-    tech: ['JavaScript', 'Frontend'],
-    github: 'https://github.com/safadaooofc/detroir',
-    featured: false,
-    status: 'arquivado',
-    category: 'outro',
-  },
 ];
 
 export const collaborations: Collaboration[] = [
+  {
+    id: 'eb-rp-framework',
+    title: 'EB & RP Map Framework',
+    role: 'Desenvolvedor',
+    description:
+      'Colaboração concluída e finalizada. Framework modular para mapas EB e RP: zonas, eventos dinâmicos, economia, spawn inteligente e administração.',
+    stack: ['Roblox Lua', 'Map Design', 'Roleplay', 'Optimization'],
+    status: 'concluido',
+  },
   {
     id: 'bot-whitelist',
     title: 'Bot de Whitelist & Advertências',

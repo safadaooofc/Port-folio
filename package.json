@@ -11,6 +11,7 @@
     "kiover-portfolio": "vite"
   },
   "dependencies": {
+    "all": "^0.0.0",
     "clsx": "2.1.1",
     "express": "^5.1.0",
     "framer-motion": "^12.34.0",
@@ -27,6 +28,6 @@
     "@vitejs/plugin-react": "5.1.1",
     "tailwindcss": "4.1.17",
     "typescript": "5.9.3",
-    "vite": "7.2.4"
+    "vite": "^7.3.6"
   }
 }
