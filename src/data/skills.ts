@@ -25,6 +25,9 @@ export const skills: Skill[] = [
   { name: 'Netlify', icon: '🌐', color: '#00C7B7', category: 'Ferramentas' },
   { name: 'Railway', icon: '🚂', color: '#0B0D0E', category: 'Ferramentas' },
   { name: 'Render', icon: '🔲', color: '#46E3B7', category: 'Ferramentas' },
+  { name: 'Mercado Pago API', icon: '💳', color: '#00B1EA', category: 'Integração' },
+  { name: 'Stripe API', icon: '💸', color: '#635BFF', category: 'Integração' },
+  { name: 'Payment Gateways', icon: '💰', color: '#10B981', category: 'Integração' },
 ];
 
 export const skillCategories = ['Roblox', 'Integração', 'Frontend', 'Backend', 'Ferramentas'] as const;
