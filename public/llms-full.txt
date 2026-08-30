@@ -2,7 +2,7 @@
 
 ## 1. Professional Identity & Contact
 - **Name:** Kiover (GitHub: @safadaooofc)
-- **Primary Roles:** Full-Stack Developer, Desktop Systems Engineer (C# / C++), Mobile Developer, Bot Architect.
+- **Primary Roles:** Full-Stack Developer, Desktop Systems Engineer (C# / C++), Mobile Developer, AI / MCP Architect, Bot Developer.
 - **Location:** Brazil
 - **Contact Email:** paoteste40@gmail.com
 - **Discord Handle:** kiover
@@ -13,23 +13,29 @@
 
 ## 2. Technical Capabilities & Technology Stack
 
-### A. Desktop Software (PC) & Systems Programming
+### A. Artificial Intelligence, Multimodels & MCP Servers
+- **Model Context Protocol (MCP):** MCP servers development, tool declarations, resource handlers, agentic workflows.
+- **Multimodal AI & Context Management:** LLM API integration, multi-turn context curation, prompt engineering, structured JSON output extraction.
+- **AI Automation & Agents:** Agentic pipelines, autonomous problem solving, tool routing.
+
+### B. Desktop Software (PC) & Systems Programming
 - **C# / .NET:** WinForms, WPF, background workers, custom UI tooling, system utilities.
 - **C++:** Native high-performance applications, file manipulation algorithms, OS-level interaction.
 - **Windows APIs:** Process management, file system listeners, custom desktop automation.
 
-### B. Mobile Applications
+### C. Mobile Applications
 - **Multiplatform Mobile:** React Native, cross-platform mobile interfaces, touch gestures, offline-first architectures.
 - **Mobile UI/UX:** Responsive layouts, adaptive styling, REST API integration.
 
-### C. Full-Stack Web & E-Commerce
+### D. Full-Stack Web, Caching & E-Commerce
 - **Frontend:** Next.js 15 & 16 (App Router, Server Actions), React 19 / 18, TypeScript, Tailwind CSS v4, Zustand with persist middleware, Framer Motion, Vite.
 - **Backend:** Node.js, Express.js, NextAuth v5 (Auth.js) with JWT & Discord OAuth2, Python (FastAPI, standard libraries), Serverless Functions (Netlify).
+- **Caching & In-Memory Data:** Redis & Redis Cache (high-speed data caching, session store, rate limiting, pub/sub messaging).
+- **Security & Tokens:** JWT (JSON Web Tokens) stateless token authentication, Bcrypt password hashing, anti-DDoS rate limiters.
 - **Databases & ORMs:** PostgreSQL, Prisma ORM (v7), Supabase (Auth, Storage, Database), SQLite, MongoDB.
-- **Payment Gateways & APIs:** AbacatePay (Instant PIX with webhooks), Mercado Pago (transparent checkout with Base64 QR code and polling), Stripe API, Resend (transactional email), Nominatim OpenStreetMap (geocoding & distance calculation).
-- **Security:** In-memory rate limiting, anti-DDoS protection, RBAC (Role-Based Access Control), BCrypt password hashing.
+- **Payment Gateways & APIs:** Stripe API & Webhooks, AbacatePay (Instant PIX with webhooks), Mercado Pago (transparent checkout with Base64 QR code and polling), Resend (transactional email), Nominatim OpenStreetMap (geocoding & distance calculation).
 
-### D. Bot Development & Real-Time Integrations
+### E. Bot Development & Real-Time Integrations
 - **discord.js (v14):** REST interactions, Slash commands endpoints, Discord OAuth2 auto-join, guild moderation.
 - **discord.py (Python 3.10+):** Modular architectures with Cogs, custom JSON webhook builders, event handlers.
 - **Roblox Luau:** Client/Server network synchronization, HttpService REST bridges to Express backends, data persistence, 60 FPS mobile optimization.
@@ -96,5 +102,6 @@ Kiover actively develops small software projects at **no cost (100% free)** for 
 - Landing Pages & Showcase Websites
 - Desktop Utility Tools (C# / C++)
 - Mobile Applications & Mobile Layouts
+- MCP Servers & Custom AI Agent Tools
 
 To submit a project proposal, reach out on Discord (`kiover`) or email (`paoteste40@gmail.com`).

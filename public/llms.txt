@@ -1,5 +1,5 @@
 # Kiover — Portfolio & Software Engineering Profile
-> Full-Stack, Desktop (C# / C++) & Mobile Developer | Bot Architecture & E-Commerce Specialist
+> Full-Stack, Desktop (C# / C++), Mobile & AI Developer | Bot Architecture, Redis Cache & E-Commerce Specialist
 
 Welcome to the LLM-readable interface for Kiover's professional developer portfolio.
 
@@ -12,25 +12,33 @@ Welcome to the LLM-readable interface for Kiover's professional developer portfo
 - **Location:** Brazil
 
 ## Core Specializations
-1. **Desktop Software & System Tools (PC):**
+1. **AI, MCP Servers & Context Engineering:**
+   - Model Context Protocol (MCP Servers) integration, tool creation, and agent orchestration.
+   - Multimodal AI models, context management, prompt engineering, and structured outputs for LLMs.
+
+2. **Desktop Software & System Tools (PC):**
    - Languages: C# (.NET, WinForms, WPF), C++
    - Native Windows desktop applications, high-performance local utilities, automated data processors.
 
-2. **Mobile App Development:**
+3. **Mobile App Development:**
    - Multiplatform mobile applications (Android & iOS) with fluid UI/UX and REST API integration.
 
-3. **E-Commerce & Payment Gateways:**
+4. **E-Commerce & Payment Gateways:**
    - Next.js 15/16 App Router, React 19, TypeScript, Tailwind CSS v4.
-   - Transparent checkouts, Instant PIX integration (AbacatePay, Mercado Pago, Stripe), dynamic geocoding freight calculations (Nominatim API), and custom product configurators.
+   - Transparent checkouts, Stripe API, Instant PIX integration (AbacatePay, Mercado Pago), dynamic geocoding freight calculations (Nominatim API), and custom product configurators.
 
-4. **Discord Bots & Serverless Automations:**
-   - discord.js v14, discord.py with Cogs, Discord Interactions REST endpoints, real-time database synchronization with PostgreSQL, Prisma ORM, and Supabase.
+5. **Backend, Caching & Database Architecture:**
+   - Redis & Redis Cache (in-memory data store, high-speed cache, rate limiting, pub/sub).
+   - JWT (JSON Web Tokens) stateless authentication, NextAuth v5 (Auth.js), PostgreSQL, Prisma ORM, Supabase.
 
-5. **Roblox Luau & Game Systems:**
-   - Large-scale roleplay and military game systems, real-time telemetry pipelines to Discord via Express API, 60 FPS mobile optimization, and persistent database architectures.
+6. **Discord Bots & Serverless Automations:**
+   - discord.js v14, discord.py with Cogs, Discord Interactions REST endpoints, real-time database synchronization.
+
+7. **Roblox Luau & Game Systems:**
+   - Large-scale roleplay and military game systems, real-time telemetry pipelines to Discord via Express API, 60 FPS mobile optimization.
 
 ## Open Pro-Bono / Free Projects Policy
-Kiover is currently accepting small custom software projects for free (custom Discord bots, landing pages, small websites, PC desktop tools in C#/C++, or mobile apps) to assist communities, build long-term partnerships, and expand the developer portfolio. Contact via Discord (`kiover`) or email (`paoteste40@gmail.com`).
+Kiover is currently accepting small custom software projects for free (custom Discord bots, landing pages, small websites, PC desktop tools in C#/C++, MCP servers, or mobile apps) to assist communities, build long-term partnerships, and expand the developer portfolio. Contact via Discord (`kiover`) or email (`paoteste40@gmail.com`).
 
 ## Key Portfolio Projects
 - **BloodStore (https://github.com/xsag7/bloodstore3):** Full-stack digital e-commerce with Supabase, Netlify Functions & PostgreSQL. Built from scratch and successfully sold to client @xsag7.

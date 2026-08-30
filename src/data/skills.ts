@@ -6,6 +6,12 @@ export interface Skill {
 }
 
 export const skills: Skill[] = [
+  // Inteligência Artificial & Agentes (AI)
+  { name: 'MCP Servers (Model Context Protocol)', icon: '🔌', color: '#10B981', category: 'Inteligência Artificial & Agentes (AI)' },
+  { name: 'Multimodels & Context IA (LLMs)', icon: '🧠', color: '#8B5CF6', category: 'Inteligência Artificial & Agentes (AI)' },
+  { name: 'Engenharia de Prompt & Agentes', icon: '🤖', color: '#38BDF8', category: 'Inteligência Artificial & Agentes (AI)' },
+  { name: 'AI Workflows & Structured Output', icon: '✨', color: '#F59E0B', category: 'Inteligência Artificial & Agentes (AI)' },
+
   // Desktop, C# & C++
   { name: 'C# (.NET / WinForms / WPF)', icon: '🔷', color: '#9B4F96', category: 'Desktop & Sistemas (PC)' },
   { name: 'C++ (Nativo & Alto Desempenho)', icon: '⚡', color: '#00599C', category: 'Desktop & Sistemas (PC)' },
@@ -20,7 +26,7 @@ export const skills: Skill[] = [
   // E-Commerce & Pagamentos
   { name: 'Mercado Pago API (Pix & Cartão)', icon: '💳', color: '#00B1EA', category: 'E-Commerce & Pagamentos' },
   { name: 'AbacatePay API (PIX Instantâneo)', icon: '🥑', color: '#10B981', category: 'E-Commerce & Pagamentos' },
-  { name: 'Stripe API', icon: '💸', color: '#635BFF', category: 'E-Commerce & Pagamentos' },
+  { name: 'Stripe API & Webhooks', icon: '💸', color: '#635BFF', category: 'E-Commerce & Pagamentos' },
   { name: 'Nominatim Geocoding (Cálculo de Frete)', icon: '📍', color: '#F59E0B', category: 'E-Commerce & Pagamentos' },
   { name: 'Checkout Transparente & Webhooks', icon: '⚡', color: '#38BDF8', category: 'E-Commerce & Pagamentos' },
 
@@ -34,13 +40,15 @@ export const skills: Skill[] = [
   { name: 'Vite', icon: '⚡', color: '#BD34FE', category: 'Frontend & Full-Stack' },
 
   // Backend & Banco de Dados
+  { name: 'Redis & Redis Cache', icon: '🔴', color: '#DC2626', category: 'Backend & Banco de Dados' },
+  { name: 'JWT (JSON Web Tokens)', icon: '🔐', color: '#A855F7', category: 'Backend & Banco de Dados' },
   { name: 'Node.js', icon: '🟢', color: '#339933', category: 'Backend & Banco de Dados' },
   { name: 'Express.js', icon: '⚡', color: '#ffffff', category: 'Backend & Banco de Dados' },
   { name: 'Prisma ORM (v7)', icon: '💎', color: '#2D3748', category: 'Backend & Banco de Dados' },
   { name: 'PostgreSQL', icon: '🐘', color: '#336791', category: 'Backend & Banco de Dados' },
   { name: 'Supabase (Auth, DB & Storage)', icon: '⚡', color: '#3ECF8E', category: 'Backend & Banco de Dados' },
   { name: 'Python 3.10+', icon: '🐍', color: '#3776AB', category: 'Backend & Banco de Dados' },
-  { name: 'NextAuth v5 (Auth.js) & JWT', icon: '🔐', color: '#A855F7', category: 'Backend & Banco de Dados' },
+  { name: 'NextAuth v5 (Auth.js)', icon: '🛡️', color: '#6366F1', category: 'Backend & Banco de Dados' },
   { name: 'Rate Limiting & Anti-DDoS', icon: '🛡️', color: '#EF4444', category: 'Backend & Banco de Dados' },
 
   // Integração & Bots
@@ -63,6 +71,7 @@ export const skills: Skill[] = [
 ];
 
 export const skillCategories = [
+  'Inteligência Artificial & Agentes (AI)',
   'Desktop & Sistemas (PC)',
   'Mobile Apps',
   'E-Commerce & Pagamentos',
