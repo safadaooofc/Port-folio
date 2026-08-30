@@ -11,7 +11,6 @@
     "kiover-portfolio": "vite"
   },
   "dependencies": {
-    "all": "^0.0.0",
     "clsx": "2.1.1",
     "express": "^5.1.0",
     "framer-motion": "^12.34.0",
