@@ -1,28 +1,38 @@
 import { motion } from 'framer-motion';
 import { profile } from '@/data/profile';
 import { TerminalPrompt } from './terminal/TerminalPrompt';
-import { CheckCircle2, Award, Zap, Code2 } from 'lucide-react';
+import { Gift, Laptop, Smartphone, ShoppingBag, Bot, Gamepad2, Layers } from 'lucide-react';
 
 export function About() {
   const highlights = [
     {
+      title: 'Softwares Desktop para PC (C# / C++)',
+      desc: 'Desenvolvimento de programas nativos para Windows em C# (.NET, WinForms, WPF) e C++. Utilitários rápidos, manipuladores de arquivos, painéis administrativos e automações locais de alto desempenho.',
+      icon: '🖥️',
+    },
+    {
+      title: 'Aplicativos Mobile (Android & iOS)',
+      desc: 'Criação de aplicativos para celulares com design responsivo, navegação fluida, conexão com APIs REST e interfaces intuitivas focadas na experiência do usuário.',
+      icon: '📱',
+    },
+    {
       title: 'E-Commerce & Gateways de Pagamento',
-      desc: 'Expertise em checkouts transparentes (Mercado Pago, PIX automático via AbacatePay, Stripe), Webhooks, cálculo inteligente de frete geoespacial (Nominatim API) e configuradores de produtos.',
+      desc: 'Checkouts transparentes com confirmação instantânea de PIX (AbacatePay, Mercado Pago, Stripe), Webhooks, cálculo inteligente de frete geoespacial (Nominatim API) e lojas completas.',
       icon: '🛍️',
     },
     {
       title: 'Next.js 15/16 & Modern Full-Stack',
-      desc: 'Domínio de React 19, TypeScript, Tailwind CSS v4, NextAuth v5 (Auth.js), gerenciamento com Zustand persist e persistência com Prisma ORM, PostgreSQL e Supabase.',
+      desc: 'Domínio de React 19, TypeScript, Tailwind CSS v4, NextAuth v5 (Auth.js), Zustand persist e persistência em banco relacional e serverless com Prisma ORM, PostgreSQL e Supabase.',
       icon: '⚡',
     },
     {
-      title: 'Bots de Discord & Automação Serverless',
-      desc: 'Desenvolvimento de bots multifuncionais em discord.js e discord.py com Cogs, moderação automatizada, sincronização bidirecional com bancos de dados e interações REST via endpoints HTTPS.',
+      title: 'Bots de Discord & Automações',
+      desc: 'Bots multifuncionais em discord.js e discord.py com Cogs, moderação automatizada, sincronização bidirecional com bancos de dados e interações REST via endpoints HTTPS.',
       icon: '🤖',
     },
     {
       title: 'Roblox Luau & Game Systems',
-      desc: 'Criação de ecossistemas com persistência de dados, telemetria em tempo real conectada ao Discord via Express API, balanceamento de economia e otimização para 60 FPS estáveis no Mobile.',
+      desc: 'Criação de ecossistemas com persistência de dados, telemetria em tempo real conectada ao Discord via Express API, balanceamento de economia e otimização para 60 FPS no Mobile.',
       icon: '🎮',
     },
   ];
@@ -44,7 +54,7 @@ export function About() {
           <div>
             <div className="text-terminal-text font-bold text-base sm:text-lg">{profile.name}</div>
             <div className="text-terminal-muted text-xs sm:text-sm font-mono">@{profile.handle} · {profile.title}</div>
-            <div className="text-terminal-amber text-xs mt-0.5 font-mono">📍 {profile.location}</div>
+            <div className="text-terminal-amber text-xs mt-0.5 font-mono">📍 {profile.location} · {profile.status}</div>
           </div>
         </div>
 
@@ -56,6 +66,21 @@ export function About() {
           ))}
         </div>
 
+        {/* Free Projects Banner */}
+        <div className="p-4 rounded border border-terminal-success/60 bg-terminal-success/10 mt-4">
+          <div className="flex items-start gap-3">
+            <Gift size={20} className="text-terminal-success flex-shrink-0 mt-0.5" />
+            <div>
+              <h3 className="text-terminal-text font-bold text-sm sm:text-base">
+                {profile.freeProjectsNotice.title}
+              </h3>
+              <p className="text-terminal-muted text-xs sm:text-sm mt-1 leading-relaxed">
+                {profile.freeProjectsNotice.description}
+              </p>
+            </div>
+          </div>
+        </div>
+
         {/* Areas of Expertise */}
         <div className="mt-6 pt-4 border-t border-terminal-border/60">
           <TerminalPrompt command="cat ~/skills/core_competencies.md" />
@@ -65,7 +90,7 @@ export function About() {
                 key={item.title}
                 initial={{ opacity: 0, y: 8 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.25, delay: idx * 0.06 }}
+                transition={{ duration: 0.25, delay: idx * 0.05 }}
                 className="p-3.5 rounded border border-terminal-border bg-terminal-surface/30 hover:border-terminal-accent/30 transition-all"
               >
                 <div className="flex items-center gap-2 mb-1.5">
@@ -77,24 +102,6 @@ export function About() {
             ))}
           </div>
         </div>
-
-        {/* Current Work */}
-        {profile.currentRole && (
-          <div className="mt-6 pt-4 border-t border-terminal-border/60">
-            <div className="text-terminal-text font-bold text-sm mb-2 font-mono">
-              ## Trabalho Atual — {profile.currentRole.company}
-            </div>
-            {profile.currentRole.maps.map((map) => (
-              <div key={map.shortName} className="flex gap-2 text-sm ml-2 mb-1">
-                <span className="text-terminal-accent">▸</span>
-                <span className="text-terminal-text">
-                  <span className="text-terminal-accent font-bold">{map.shortName}</span>
-                  <span className="text-terminal-muted"> — {map.role}</span>
-                </span>
-              </div>
-            ))}
-          </div>
-        )}
 
         {/* Stats Grid */}
         <div className="mt-6 pt-4 border-t border-terminal-border/60">

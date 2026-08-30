@@ -1,6 +1,6 @@
 export type ProjectStatus = 'ativo' | 'arquivado' | 'em-andamento' | 'concluido' | 'vendido';
 
-export type ProjectCategory = 'ecommerce' | 'web' | 'bot' | 'roblox' | 'game' | 'outro';
+export type ProjectCategory = 'ecommerce' | 'desktop' | 'mobile' | 'web' | 'bot' | 'roblox' | 'game' | 'outro';
 
 export interface Project {
   id: string;
@@ -34,42 +34,62 @@ export interface Collaboration {
   learnings?: string[];
 }
 
-/** Trabalho Atual */
-export const activeWork: Project[] = [
+export const projects: Project[] = [
   {
-    id: 'alma-criativa-ecomerce',
-    title: 'Alma Criativa Confeitaria — E-commerce & Configurador',
+    id: 'bloodstore3',
+    title: 'BloodStore — Loja Digital E-Commerce (Projeto Vendido)',
     description:
-      'Plataforma E-commerce full-stack moderna com sistema de loja online e configurador interativo multicamadas para produtos personalizados. Inclui checkout transparente via Mercado Pago (PIX dinâmico com QR Code Base64 e polling de 4s + Cartão), motor inteligente de cálculo de frete por geolocalização via Nominatim API e calendário de antecedência para produção artesanal.',
-    tech: ['React 19', 'TypeScript', 'Tailwind CSS', 'Vite', 'Mercado Pago API', 'Nominatim API', 'Framer Motion'],
+      'Plataforma de e-commerce digital completa desenvolvida originalmente para venda automatizada de produtos e serviços virtuais, com persistência na nuvem via Supabase e funções serverless no Netlify. Projeto criado do zero, validado em produção e comercializado com sucesso para o cliente/parceiro @xsag7.',
+    tech: ['React', 'TypeScript', 'Vite', 'Supabase', 'PostgreSQL', 'Netlify Functions', 'Netlify'],
+    github: 'https://github.com/xsag7/bloodstore3',
     featured: true,
-    status: 'em-andamento',
-    role: 'Desenvolvedor Full-Stack & UI/UX',
+    status: 'vendido',
+    role: 'Criador Original & Desenvolvedor Full-Stack',
     category: 'ecommerce',
-    demo: 'https://almacriativa.netlify.app',
-    github: 'https://github.com/safadaooofc',
-    hoursWorked: '~80h',
-    badge: 'Trabalho Atual',
+    hoursWorked: '~60h',
+    badge: 'Destaque / Projeto Vendido',
     keyFeatures: [
-      'Checkout transparente com Mercado Pago (Pix com confirmação automática via polling + Cartão de crédito)',
-      'Motor de frete geocodificado com 3 operadoras e precificação dinâmica por quilômetro até a sede',
-      'Configuradores interativos multicamadas: "Monte seu Bolo" e "Monte sua Festa"',
-      'Sistema de calendário com bloqueio inteligente de prazos mínimos de produção',
+      'Arquitetura Serverless com Netlify Functions para processamento seguro de transações',
+      'Persistência, autenticação e banco de dados em nuvem com Supabase (PostgreSQL)',
+      'Catálogo de produtos digitais com fluxo de entrega automatizada e checkout fluido',
+      'Case real de produto monetizado, transferido e operando comercialmente com cliente final',
     ],
     learnings: [
-      'Integração avançada com APIs de pagamento e Webhooks do Mercado Pago',
-      'Geocodificação e cálculo de distâncias geoespaciais em tempo real no frontend/backend',
-      'Arquitetura de componentes modulares e validação rigorosa com React 19 e TypeScript',
+      'Ciclo completo de vida de produto de software: ideação, desenvolvimento, deploy e venda',
+      'Construção de backends serverless integrados a BaaS (Supabase)',
+      'Transferência de código, documentação de entrega e suporte pós-venda para comprador',
     ],
   },
-];
-
-export const projects: Project[] = [
+  {
+    id: 'sagaz-site',
+    title: 'Sagaz Site — Plataforma Digital de Vendas & Recargas PIX',
+    description:
+      'Plataforma completa e interativa de vendas de cartões digitais, contas/logins e recargas de saldo instantâneas via PIX com confirmação automática por Webhook REST (AbacatePay). Conta com sistema de recompensas e Bot de Discord (v14) sincronizado ao banco de dados PostgreSQL.',
+    tech: ['Next.js 16', 'TypeScript', 'Tailwind CSS v4', 'Tailwind UI', 'PostgreSQL', 'Prisma v7', 'NextAuth v5', 'discord.js v14', 'Resend', 'AbacatePay API'],
+    github: 'https://github.com/safadaooofc/sagaz-site',
+    featured: true,
+    status: 'concluido',
+    role: 'Desenvolvedor Full-Stack & Bot Architect',
+    category: 'ecommerce',
+    hoursWorked: '~90h',
+    badge: 'Destaque / Collab',
+    keyFeatures: [
+      'Emissão de cobrança PIX automatizada e conciliação instantânea via Webhook REST',
+      'Bot de Discord integrado com sincronização bidirecional de dados e comandos administrativos',
+      'Arquitetura de segurança com RBAC (Role-Based Access Control) e rate limiting restrito',
+      'Painel de administração de estoque de produtos digitais, logs de auditoria e usuários',
+    ],
+    learnings: [
+      'Desenvolvimento com as últimas features do ecossistema Next.js 16 e Tailwind CSS v4',
+      'Arquitetura de microsserviços integrando Web App, Bot Discord e Webhooks bancários',
+      'Gerenciamento transacional de saldo e estoque digital em alta concorrência',
+    ],
+  },
   {
     id: 'luxury-sales-site',
     title: 'Luxury Sales — E-commerce de Jogos Digitais',
     description:
-      'Plataforma premium de e-commerce voltada para venda de jogos digitais, chaves de ativação (Steam, PSN, Xbox) e serviços virtuais. Conta com design de luxo, autenticação dual (Credentials + Discord OAuth com auto-join no servidor via bot), rate limiting anti-DDoS em memória, catálogo com variações complexas de produto e painel administrativo completo com logs de chat de suporte ao cliente.',
+      'Plataforma premium de e-commerce voltada para venda de jogos digitais, chaves de ativação (Steam, PSN, Xbox) e serviços virtuais. Conta com design moderno de luxo, autenticação dual (Credentials + Discord OAuth com auto-join no servidor via bot), rate limiting anti-DDoS em memória, catálogo com variações complexas de produto e painel administrativo completo com logs de chat de suporte ao cliente.',
     tech: ['Next.js 15', 'React 19', 'TypeScript', 'Tailwind CSS', 'Prisma ORM', 'PostgreSQL', 'NextAuth v5', 'Zustand', 'Lucide React'],
     github: 'https://github.com/safadaooofc/luxury-sales-site',
     featured: true,
@@ -77,7 +97,7 @@ export const projects: Project[] = [
     role: 'Desenvolvedor Full-Stack & UI/UX',
     category: 'ecommerce',
     hoursWorked: '~85h',
-    badge: 'Collab / Destaque',
+    badge: 'Destaque / Collab',
     keyFeatures: [
       'NextAuth v5 com autenticação via Credenciais e Discord OAuth2 + auto-join no servidor',
       'Proteção contra abuso e DDoS com rate limiting em memória e prevenção de nomes duplicados',
@@ -92,53 +112,29 @@ export const projects: Project[] = [
     ],
   },
   {
-    id: 'sagaz-site',
-    title: 'Sagaz Site — Plataforma Digital de Vendas & Recargas',
+    id: 'alma-criativa-ecomerce',
+    title: 'Alma Criativa Confeitaria — E-commerce & Configurador',
     description:
-      'Plataforma completa de vendas de cartões digitais, logins, recargas de saldo instantâneas via PIX com confirmação automática por Webhook REST, recompensas interativas e Bot de Discord (v14) integrado diretamente ao banco de dados PostgreSQL.',
-    tech: ['Next.js 16', 'TypeScript', 'Tailwind CSS v4', 'Tailwind UI', 'PostgreSQL', 'Prisma v7', 'NextAuth v5', 'discord.js v14', 'Resend', 'AbacatePay API'],
-    github: 'https://github.com/safadaooofc/sagaz-site',
+      'Plataforma E-commerce full-stack moderna com sistema de loja online e configurador interativo multicamadas para produtos personalizados. Inclui checkout transparente via Mercado Pago (PIX dinâmico com QR Code Base64 e polling de 4s + Cartão), motor inteligente de cálculo de frete por geolocalização via Nominatim API e calendário de antecedência para produção artesanal.',
+    tech: ['React 19', 'TypeScript', 'Tailwind CSS', 'Vite', 'Mercado Pago API', 'Nominatim API', 'Framer Motion'],
     featured: true,
     status: 'concluido',
-    role: 'Desenvolvedor Full-Stack & Bot Architect',
+    role: 'Desenvolvedor Full-Stack & UI/UX',
     category: 'ecommerce',
-    hoursWorked: '~90h',
-    badge: 'Collab / Destaque',
+    demo: 'https://almacriativa.netlify.app',
+    github: 'https://github.com/safadaooofc',
+    hoursWorked: '~80h',
+    badge: 'E-commerce Full-Stack',
     keyFeatures: [
-      'Emissão de cobrança PIX automatizada e conciliação instantânea via Webhook REST',
-      'Bot de Discord integrado com sincronização bidirecional de dados e comandos administrativos',
-      'Arquitetura de segurança com RBAC (Role-Based Access Control) e rate limiting restrito',
-      'Painel de administração de estoque de produtos digitais, logs de auditoria e usuários',
+      'Checkout transparente com Mercado Pago (Pix com confirmação automática via polling + Cartão de crédito)',
+      'Motor de frete geocodificado com 3 operadoras e precificação dinâmica por quilômetro até a sede',
+      'Configuradores interativos multicamadas: "Monte seu Bolo" e "Monte sua Festa"',
+      'Sistema de calendário com bloqueio inteligente de prazos mínimos de produção',
     ],
     learnings: [
-      'Desenvolvimento com as últimas features do ecossistema Next.js 16 e Tailwind CSS v4',
-      'Arquitetura de microsserviços integrando Web App, Bot Discord e Webhooks bancários',
-      'Gerenciamento transacional de saldo e estoque digital em alta concorrência',
-    ],
-  },
-  {
-    id: 'bloodstore3',
-    title: 'BloodStore — Loja Digital E-Commerce (Projeto Vendido)',
-    description:
-      'Plataforma de e-commerce digital desenvolvida originalmente para venda automatizada de produtos e serviços online, com persistência na nuvem via Supabase e funções serverless. Projeto criado, validado e vendido com sucesso para o cliente/parceiro @xsag7.',
-    tech: ['React', 'TypeScript', 'Vite', 'Supabase', 'PostgreSQL', 'Netlify Functions', 'Netlify'],
-    github: 'https://github.com/xsag7/bloodstore3',
-    featured: true,
-    status: 'vendido',
-    role: 'Criador Original & Desenvolvedor Full-Stack',
-    category: 'ecommerce',
-    hoursWorked: '~60h',
-    badge: 'Projeto Vendido',
-    keyFeatures: [
-      'Arquitetura Serverless com Netlify Functions para processamento seguro',
-      'Persistência e autenticação em nuvem com Supabase (PostgreSQL)',
-      'Catálogo de produtos digitais com entrega automatizada e checkout fluido',
-      'Case de sucesso de comercialização e monetização direta de software',
-    ],
-    learnings: [
-      'Ciclo completo de vida de produto: concepção, validação, deploy e venda comercial',
-      'Construção de backends serverless integrados a BaaS (Supabase)',
-      'Negociação e transferência de código profissional para cliente final',
+      'Integração avançada com APIs de pagamento e Webhooks do Mercado Pago',
+      'Geocodificação e cálculo de distâncias geoespaciais em tempo real no frontend/backend',
+      'Arquitetura de componentes modulares e validação rigorosa com React 19 e TypeScript',
     ],
   },
   {
@@ -164,6 +160,50 @@ export const projects: Project[] = [
       'Engenharia de UI/UX de alta conversão focada no público gamer',
       'Gerenciamento de cálculos matemáticos dinâmicos em tempo real sem degradação de performance',
       'Design responsivo avançado e animações micro-interativas com Framer Motion',
+    ],
+  },
+  {
+    id: 'desktop-csharp-apps',
+    title: 'Softwares & Aplicativos Desktop (C# .NET / C++)',
+    description:
+      'Desenvolvimento de aplicações nativas para Windows em C# (.NET, WinForms, WPF) e C++. Criação de painéis administrativos de computador, automações de sistema, manipuladores de dados locais e utilitários de alta velocidade sob medida.',
+    tech: ['C#', '.NET', 'WinForms', 'WPF', 'C++', 'Windows API', 'Automação'],
+    github: 'https://github.com/safadaooofc',
+    featured: true,
+    status: 'ativo',
+    role: 'Desenvolvedor C# / C++ Desktop',
+    category: 'desktop',
+    hoursWorked: '~70h',
+    badge: 'Desktop & Sistemas (PC)',
+    keyFeatures: [
+      'Criação de softwares desktop com interfaces gráficas ricas e intuitivas em WinForms e WPF',
+      'Utilitários em C++ para processamento rápido de arquivos e comunicação com processos do sistema',
+      'Automações locais e integração com bancos de dados SQLite e APIs externas',
+    ],
+    learnings: [
+      'Arquitetura de software desktop com gerenciamento de memória e multithreading',
+      'Desenvolvimento de ferramentas utilitárias estáveis e leves para ambiente Windows',
+    ],
+  },
+  {
+    id: 'mobile-custom-apps',
+    title: 'Aplicativos Mobile Sob Medida (Multiplataforma)',
+    description:
+      'Desenvolvimento de aplicativos para dispositivos móveis com foco em experiência do usuário, performance nativa, integração com APIs REST e layout adaptável para Android e iOS.',
+    tech: ['Mobile UI', 'React Native', 'TypeScript', 'REST APIs', 'Mobile UX'],
+    github: 'https://github.com/safadaooofc',
+    featured: true,
+    status: 'ativo',
+    role: 'Mobile Developer',
+    category: 'mobile',
+    hoursWorked: '~40h',
+    badge: 'Mobile Apps',
+    keyFeatures: [
+      'Interfaces mobile-first intuitivas com navegação fluida',
+      'Consumo de APIs REST e persistência local de dados no dispositivo',
+    ],
+    learnings: [
+      'Otimização de layouts para diferentes formatos de tela e densidades de pixel',
     ],
   },
   {
@@ -359,16 +399,16 @@ export const projects: Project[] = [
 
 export const collaborations: Collaboration[] = [
   {
-    id: 'collab-luxury-sales',
-    title: 'Luxury Sales — E-commerce & Painel Administrativo',
-    role: 'Desenvolvedor Full-Stack & UI/UX',
+    id: 'collab-bloodstore',
+    title: 'BloodStore — Loja Digital E-Commerce (@xsag7)',
+    role: 'Criador Original & Desenvolvedor Full-Stack',
     description:
-      'Colaboração na arquitetura e desenvolvimento completo do e-commerce Next.js 15, sistema de pagamentos, autenticação Discord OAuth e painel administrativo com Prisma e PostgreSQL.',
-    stack: ['Next.js 15', 'React 19', 'TypeScript', 'Prisma', 'PostgreSQL', 'Zustand', 'NextAuth v5'],
-    github: 'https://github.com/safadaooofc/luxury-sales-site',
-    status: 'concluido',
-    hoursWorked: '~85h',
-    badge: 'Collab Full-Stack',
+      'Projeto próprio de e-commerce com Supabase e Netlify Functions, desenvolvido, implementado e comercializado com sucesso para o cliente/parceiro @xsag7.',
+    stack: ['React', 'TypeScript', 'Supabase', 'Netlify Functions', 'PostgreSQL'],
+    github: 'https://github.com/xsag7/bloodstore3',
+    status: 'vendido',
+    hoursWorked: '~60h',
+    badge: 'Projeto Vendido / Destaque',
   },
   {
     id: 'collab-sagaz-site',
@@ -383,16 +423,16 @@ export const collaborations: Collaboration[] = [
     badge: 'Collab Full-Stack',
   },
   {
-    id: 'collab-bloodstore',
-    title: 'BloodStore — Loja Digital E-Commerce (@xsag7)',
-    role: 'Criador Original & Desenvolvedor Full-Stack',
+    id: 'collab-luxury-sales',
+    title: 'Luxury Sales — E-commerce & Painel Administrativo',
+    role: 'Desenvolvedor Full-Stack & UI/UX',
     description:
-      'Projeto próprio de e-commerce com Supabase e Netlify Functions, desenvolvido, implementado e comercializado com sucesso para o cliente/parceiro @xsag7.',
-    stack: ['React', 'TypeScript', 'Supabase', 'Netlify Functions', 'PostgreSQL'],
-    github: 'https://github.com/xsag7/bloodstore3',
-    status: 'vendido',
-    hoursWorked: '~60h',
-    badge: 'Projeto Vendido',
+      'Colaboração na arquitetura e desenvolvimento completo do e-commerce Next.js 15, sistema de pagamentos, autenticação Discord OAuth e painel administrativo com Prisma e PostgreSQL.',
+    stack: ['Next.js 15', 'React 19', 'TypeScript', 'Prisma', 'PostgreSQL', 'Zustand', 'NextAuth v5'],
+    github: 'https://github.com/safadaooofc/luxury-sales-site',
+    status: 'concluido',
+    hoursWorked: '~85h',
+    badge: 'Collab Full-Stack',
   },
   {
     id: 'collab-lp-community',
@@ -431,5 +471,6 @@ export const collaborations: Collaboration[] = [
   },
 ];
 
-/** Todos os projetos para listagens (trabalho atual primeiro) */
-export const allProjects: Project[] = [...activeWork, ...projects];
+/** Compatibilidade */
+export const activeWork: Project[] = [];
+export const allProjects: Project[] = projects;

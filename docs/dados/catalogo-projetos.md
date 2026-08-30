@@ -1,88 +1,55 @@
-# Catálogo de projetos — Kiover
+# Catálogo Completo de Projetos — Kiover
 
-**Atualizado:** 2026-05-30  
-**Fontes:** `projetos.txt`, `projeto2.md`, site atual, informações do Kiover.
-
----
-
-## Papel atual (Reuel)
-
-| Mapa / filial | Papel | Status |
-|---------------|-------|--------|
-| **Capital do Mato Grosso Roleplay** (Capital do MT BR) | Sub-dono + Chefe de Desenvolvimento | Em andamento |
-| **Exército Brasileiro do Reuel** (EB) | Sub-dono + Chefe de Desenvolvimento | Em andamento |
-
-Empresa-mãe: **Reuel** — reúne filiais RP e EB no Roblox e Discord.  
-Site institucional: https://reueleberp.discloud.app
+**Atualizado:** 2026-08-30  
+**Perfil:** Desenvolvedor Full-Stack, Desktop (C# / C++) & Mobile  
 
 ---
 
-## Projetos em destaque
+## 🛍️ E-Commerce & Lojas Digitais
 
-### 1. Reuel — Site institucional (`Site_regras_wl`)
-
-- **GitHub:** https://github.com/safadaooofc/Site_regras_wl
-- **Demo:** https://reueleberp.discloud.app
-- **Stack:** React 19, TypeScript, Vite, Tailwind 4, Express, Discord OAuth, Discloud
-- **Descrição:** Site oficial da Reuel com regras RP/EB, painel admin CMS, OAuth Discord, auto-join, slash commands, logs automáticos e widget de jogadores online.
-- **Status:** Ativo — em desenvolvimento contínuo (1 issue aberta)
-
-### 2. Roblox × Discord — Sistema de monitoramento
-
-- **GitHub:** https://github.com/safadaooofc
-- **Stack:** Luau, Node.js, Express, Discord.js, HttpService
-- **Descrição:** Telemetria em tempo real (mortes, spawn, chat, interações), chat bidirecional com permissões por cargo, logs por jogador no Discord, exportação JSON (`!log`), backup Google Drive.
-- **Status:** Ativo
+| Projeto | Repositório / Link | Stack | Horas | Status |
+| :--- | :--- | :--- | :--- | :--- |
+| **BloodStore** | [xsag7/bloodstore3](https://github.com/xsag7/bloodstore3) | React, Vite, Supabase, PostgreSQL, Netlify Functions | ~60h | `[Projeto Vendido / Destaque]` |
+| **Sagaz Site** | [safadaooofc/sagaz-site](https://github.com/safadaooofc/sagaz-site) | Next.js 16, Tailwind v4, Prisma v7, AbacatePay PIX, discord.js | ~90h | `[Collab / Destaque]` |
+| **Luxury Sales** | [safadaooofc/luxury-sales-site](https://github.com/safadaooofc/luxury-sales-site) | Next.js 15, React 19, Prisma, PostgreSQL, NextAuth v5, Zustand | ~85h | `[Collab / Destaque]` |
+| **Alma Criativa Confeitaria** | [almacriativa.netlify.app](https://almacriativa.netlify.app) | React 19, TypeScript, Tailwind, Mercado Pago API, Nominatim | ~80h | `[E-commerce Full-Stack]` |
+| **LP Community** | [safadaooofc/lp-community](https://github.com/safadaooofc/lp-community) | React 18, Vite, Tailwind CSS, Framer Motion | ~45h | `[Collab / UI-UX]` |
+| **Projeto SAGAZ** | [safadaooofc/Projeto-SAGAZ](https://github.com/safadaooofc/Projeto-SAGAZ) | Node.js, JavaScript, Community Architecture | ~25h | `[Collab Base]` |
 
 ---
 
-## Trabalho atual — Mapas Roblox (Reuel)
+## 🖥️ Desktop (C# / C++) & Mobile
 
-### Capital do MT BR — Roleplay
-
-Sistemas desenvolvidos/otimizados (autoria Kiover):
-
-- Persistência dinâmica (tempo de jogo, dinheiro, status)
-- Anti-AFK / gestão de slots
-- API whitelist + bot contingência Discord
-- Heist System (banco roubável, C4, lockpick, crafting)
-- Bases corporações (PRF, PF, Polícia Penal), frotas, spawns
-- Pedágios, transporte público mobile, joalheria, easter eggs
-- Level design e otimização FPS (PC/Mobile)
-
-### Exército Brasileiro do Reuel (EB)
-
-- Recrutamento, patente, regulamento militar (integrado ao site `/regras/eb`)
-- Desenvolvimento paralelo à filial RP sob marca Reuel
+| Projeto | Descrição | Stack | Status |
+| :--- | :--- | :--- | :--- |
+| **Softwares Desktop Windows** | Aplicativos nativos, utilitários locais e painéis administrativos | C# (.NET / WinForms / WPF), C++, Windows API | `[Ativo / Sob Medida]` |
+| **Aplicativos Mobile** | Apps para celular multiplataforma com integração a APIs REST | React Native, Mobile UI/UX, TypeScript | `[Ativo / Sob Medida]` |
 
 ---
 
-## Outros projetos
+## 🌐 Web Institucional & CMS
 
-| Projeto | GitHub | Demo | Tech |
-|---------|--------|------|------|
-| Jogo da Cobrinha (web) | https://github.com/safadaooofc/jogo_cobrinha | — | HTML, CSS, JS |
-| Jogo da Cobrinha (executável) | https://github.com/safadaooofc/jogo_cobrinha_executavel | — | HTML |
-| detroir | https://github.com/safadaooofc/detroir | — | JavaScript |
-| Discord RPC — YT Music | https://github.com/safadaooofc/discord-rpc-Kiover | — | JS, Python, WS |
-| EB & RP Map Framework | — | — | Roblox Lua |
+| Projeto | Repositório / Link | Stack | Horas | Status |
+| :--- | :--- | :--- | :--- | :--- |
+| **Reuel — Site Institucional** | [Site_regras_wl](https://github.com/safadaooofc/Site_regras_wl) | React 19, Express, Discord OAuth2, Discloud | ~120h | `[Concluído]` |
 
 ---
 
-## Colaborações
+## 🎮 Roblox Luau & Game Systems
 
-### Bot Whitelist & Advertências
-
-- **Papel:** Scripter / Bot Developer
-- **Stack:** JavaScript, Discord Bot
-- **Status:** **Concluído** — colaboração encerrada
+| Projeto | Descrição | Stack | Horas | Status |
+| :--- | :--- | :--- | :--- | :--- |
+| **Capital do MT Roleplay** | Mapa de Roleplay com economia, Heist System e otimização 60 FPS | Roblox Luau, Express API, Mobile | ~150h | `[Concluído]` |
+| **EB Reuel** | Treinamento militar com patentes e regulamento integrado | Roblox Luau, Militar Systems | ~90h | `[Concluído]` |
+| **Roblox × Discord Telemetria** | Pipeline assíncrono de eventos e chat bidirecional em tempo real | Luau, Express, Discord.js, Render | ~50h | `[Concluído]` |
 
 ---
 
-## Decisões confirmadas (2026-05-30 / atualizado 2026-05-31)
+## 🤖 Bots de Discord & Automações
 
-| Item | Valor |
-|------|-------|
-| Discloud | Plano **Platinum** confirmado |
-| Paleta | Estilo **CMD/PowerShell** — preto `#0c0c0c` + cinza `#cccccc` |
-| Subdomínio portfólio | **`kiover.discloud.app`** (`ID=kiover` no `discloud.config`) |
+| Projeto | Descrição | Stack | Horas | Status |
+| :--- | :--- | :--- | :--- | :--- |
+| **Caixa de Comandos** | Bot multifuncional com Cogs, moderação e webhooks JSON | Python 3.10+, discord.py, Discloud | ~40h | `[Concluído]` |
+| **Interactive BOT** | Bot para automação e interações customizadas | JavaScript, Node.js, Discord.js | ~20h | `[Concluído]` |
+| **Discord RPC — YT Music** | Bridge WebSocket para Rich Presence no Discord | JS, Python, WebSockets, Chrome Ext | ~25h | `[Arquivado]` |
+| **Coletor de Tokens** | Utilitário para automação de processos | JavaScript, Node.js | ~15h | `[Arquivado]` |

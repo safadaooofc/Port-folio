@@ -1,0 +1,47 @@
+# Kiover — Portfolio & Software Engineering Profile
+> Full-Stack, Desktop (C# / C++) & Mobile Developer | Bot Architecture & E-Commerce Specialist
+
+Welcome to the LLM-readable interface for Kiover's professional developer portfolio.
+
+## Developer Overview
+- **Name:** Kiover
+- **GitHub:** https://github.com/safadaooofc
+- **Discord:** kiover
+- **Email:** paoteste40@gmail.com
+- **Status:** Available for freelance, collaborations & custom small projects (accepting small projects for free)
+- **Location:** Brazil
+
+## Core Specializations
+1. **Desktop Software & System Tools (PC):**
+   - Languages: C# (.NET, WinForms, WPF), C++
+   - Native Windows desktop applications, high-performance local utilities, automated data processors.
+
+2. **Mobile App Development:**
+   - Multiplatform mobile applications (Android & iOS) with fluid UI/UX and REST API integration.
+
+3. **E-Commerce & Payment Gateways:**
+   - Next.js 15/16 App Router, React 19, TypeScript, Tailwind CSS v4.
+   - Transparent checkouts, Instant PIX integration (AbacatePay, Mercado Pago, Stripe), dynamic geocoding freight calculations (Nominatim API), and custom product configurators.
+
+4. **Discord Bots & Serverless Automations:**
+   - discord.js v14, discord.py with Cogs, Discord Interactions REST endpoints, real-time database synchronization with PostgreSQL, Prisma ORM, and Supabase.
+
+5. **Roblox Luau & Game Systems:**
+   - Large-scale roleplay and military game systems, real-time telemetry pipelines to Discord via Express API, 60 FPS mobile optimization, and persistent database architectures.
+
+## Open Pro-Bono / Free Projects Policy
+Kiover is currently accepting small custom software projects for free (custom Discord bots, landing pages, small websites, PC desktop tools in C#/C++, or mobile apps) to assist communities, build long-term partnerships, and expand the developer portfolio. Contact via Discord (`kiover`) or email (`paoteste40@gmail.com`).
+
+## Key Portfolio Projects
+- **BloodStore (https://github.com/xsag7/bloodstore3):** Full-stack digital e-commerce with Supabase, Netlify Functions & PostgreSQL. Built from scratch and successfully sold to client @xsag7.
+- **Sagaz Site (https://github.com/safadaooofc/sagaz-site):** Next.js 16 digital products store with instant PIX webhook reconciliation and discord.js v14 bot synchronization on PostgreSQL.
+- **Luxury Sales (https://github.com/safadaooofc/luxury-sales-site):** Next.js 15 digital games store with dual auth (Credentials + Discord OAuth), rate limiting, and admin analytics dashboard.
+- **Alma Criativa Confeitaria (https://almacriativa.netlify.app):** Full-stack React 19 e-commerce with multi-layer product configurators, Mercado Pago checkout, and geocoded delivery rate engine.
+- **LP Community (https://github.com/safadaooofc/lp-community):** High-converting GTA V store with real-time dynamic GTA$ calculator and WhatsApp/Discord smart checkout.
+- **Reuel Site & CMS (https://github.com/safadaooofc/Site_regras_wl):** Institutional portal and live CMS with Discord OAuth2, REST slash commands, and player count proxy.
+- **Capital do Mato Grosso Roleplay & EB Reuel:** Complex Roblox Luau game systems with database persistence, heist mechanics, and police dispatch.
+- **Caixa de Comandos:** Python 3.10+ modular Discord bot built with Cogs and JSON webhook integration.
+
+## Full LLM Documentation
+For the comprehensive, detailed single-file version of all code structures, metrics, and case studies, visit:
+- [Full LLM Profile Documentation](/llms-full.txt)

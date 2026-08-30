@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Mail, MapPin, MessageCircle, Github, ExternalLink } from 'lucide-react';
+import { Mail, MapPin, MessageCircle, Github, ExternalLink, Gift } from 'lucide-react';
 import { profile } from '@/data/profile';
 import { TerminalPrompt } from './terminal/TerminalPrompt';
 
@@ -19,20 +19,20 @@ export function Contact() {
 
   const channels = [
     {
+      icon: MessageCircle,
+      label: 'discord',
+      value: `${profile.discord} (preferencial para projetos rápidos)`,
+      href: profile.links.discord,
+      color: 'text-terminal-amber',
+      action: '[ abrir discord ]',
+    },
+    {
       icon: Mail,
       label: 'email',
       value: profile.email,
       href: profile.links.email,
       color: 'text-terminal-accent',
-      action: '[ abrir email ]',
-    },
-    {
-      icon: MessageCircle,
-      label: 'discord',
-      value: profile.discord,
-      href: profile.links.discord,
-      color: 'text-terminal-amber',
-      action: '[ abrir discord ]',
+      action: '[ enviar email ]',
     },
     {
       icon: Github,
@@ -40,23 +40,35 @@ export function Contact() {
       value: profile.handle,
       href: profile.links.github,
       color: 'text-terminal-text',
-      action: '[ abrir github ]',
+      action: '[ ver repositórios ]',
     },
   ];
 
   return (
-    <section className="py-2">
+    <section className="py-2 space-y-6">
       <motion.div
         initial={{ opacity: 0, y: 12 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.35 }}
       >
-        <TerminalPrompt command="mail" />
-        <p className="mt-2 mb-6 text-terminal-muted text-sm">
-          use os links abaixo para contato direto
-        </p>
+        <TerminalPrompt command="mail --compose" />
+        
+        {/* Free custom project notice */}
+        <div className="mt-3 p-4 rounded border border-terminal-success/60 bg-terminal-success/10 mb-6">
+          <div className="flex items-start gap-3">
+            <Gift size={20} className="text-terminal-success flex-shrink-0 mt-0.5" />
+            <div>
+              <h3 className="text-terminal-text font-bold text-sm sm:text-base">
+                {profile.freeProjectsNotice.title}
+              </h3>
+              <p className="text-terminal-muted text-xs sm:text-sm mt-1 leading-relaxed">
+                Precisa de um <strong>Bot de Discord</strong>, <strong>Landing Page / Site</strong>, <strong>Software para PC (C# / C++)</strong> ou <strong>App Mobile</strong>? Entre em contato diretamente pelo Discord ou e-mail. Desenvolvo projetos pequenos sob medida sem custo para agregar valor à sua comunidade e expandir portfólio.
+              </p>
+            </div>
+          </div>
+        </div>
 
-        <div className="text-terminal-text font-bold text-sm mb-4"># Informações de Contato</div>
+        <div className="text-terminal-text font-bold text-sm mb-4"># Canais de Atendimento Direto</div>
 
         <div className="space-y-3 mb-6">
           {channels.map(({ icon: Icon, label, value, href, color, action }) => (
@@ -84,19 +96,19 @@ export function Contact() {
           ))}
         </div>
 
-        <div className="flex items-center gap-3 mb-6">
+        <div className="flex flex-wrap items-center gap-3 mb-6">
           <button
             type="button"
             onClick={copyDiscord}
-            className="px-4 py-2 text-sm rounded border border-terminal-border text-terminal-muted hover:text-terminal-text hover:border-terminal-accent/40 transition-all"
+            className="px-4 py-2 text-sm rounded border border-terminal-border text-terminal-muted hover:text-terminal-text hover:border-terminal-accent/40 transition-all font-mono"
           >
-            {copied ? '✓ discord copiado!' : '[ copiar discord ]'}
+            {copied ? '✓ tag discord copiada!' : '[ copiar tag do discord: kiover ]'}
           </button>
         </div>
 
         <div className="flex items-center gap-3 text-sm text-terminal-muted">
           <MapPin size={14} />
-          <span>{profile.location}</span>
+          <span>{profile.location} · {profile.status}</span>
         </div>
       </motion.div>
     </section>

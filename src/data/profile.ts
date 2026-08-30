@@ -2,15 +2,15 @@ export const profile = {
   name: 'Kiover',
   handle: 'safadaoooofc',
   nickname: 'safadaoooofc',
-  title: 'Full-Stack Developer | E-Commerce, Web & Bot Architecture',
-  tagline: 'Desenvolvedor Full-Stack focado em E-commerces, Next.js, Automações e Gateways de Pagamento',
+  title: 'Full-Stack, Desktop (C# / C++) & Mobile Developer | Bot Architecture',
+  tagline: 'Desenvolvedor Full-Stack, Desktop (C#/C++) e Mobile · Aceitando pequenos projetos de graça sob medida!',
   bio: [
-    'Desenvolvedor Full-Stack com ampla experiência na criação de plataformas de e-commerce completas, aplicações web modernas (Next.js 15/16 App Router, React 19, TypeScript) e sistemas de automação de alta performance.',
-    'Especialista em fluxos de monetização e checkout transparente (Mercado Pago, PIX instantâneo via AbacatePay, Stripe), cálculo geoespacial de frete inteligente e gestão de estoque digital.',
-    'Histórico comprovado de projetos comerciais entregues, colaborações de sucesso e software proprietário desenvolvido do zero até a comercialização e venda final.',
-    'Experiência sólida na integração profunda entre Game Engines (Roblox Luau), APIs REST (Node.js/Express) e Bots de Discord com suporte a RBAC, telemetria em tempo real e persistência em banco de dados relacional e serverless (PostgreSQL, Prisma, Supabase).',
+    'Desenvolvedor Full-Stack e Engenheiro de Software com experiência prática na criação de plataformas web completas, e-commerces com pagamentos instantâneos (PIX / Cartão) e arquiteturas de alta performance.',
+    'Desenvolvo softwares e aplicativos para computador (Desktop) em C# (.NET / WinForms / WPF) e C++ (ferramentas nativas e automações de alto desempenho), além de aplicativos para dispositivos móveis (Mobile).',
+    'Especialista na criação de Bots de Discord avançados, integrações de APIs REST, Webhooks bancários e ecossistemas com sincronização em tempo real (PostgreSQL, Prisma, Supabase, Node.js e Python).',
+    '🎁 Aberto para novos desafios e parcerias: Estou aceitando projetos pequenos de graça (bots, sites, landing pages, utilitários para PC ou mobile sob medida) para ajudar comunidades e expandir o portfólio!',
   ],
-  status: 'Disponível para projetos e colaborações',
+  status: '🟢 Disponível — Aceitando pequenos projetos de graça sob medida',
   location: 'Brasil',
   email: 'paoteste40@gmail.com',
   discord: 'kiover',
@@ -21,20 +21,15 @@ export const profile = {
     email: 'mailto:paoteste40@gmail.com',
   },
   stats: [
-    { label: 'Horas de Dev', value: '350+ h' },
+    { label: 'Horas de Dev', value: '400+ h' },
     { label: 'Projetos & Collabs', value: '15+' },
-    { label: 'E-Commerces & Lojas', value: '5+' },
-    { label: 'Tecnologias', value: '30+' },
+    { label: 'E-Commerces & Apps', value: '7+' },
+    { label: 'Tecnologias', value: '35+' },
   ],
-  currentRole: {
-    company: 'Alma Criativa Confeitaria',
-    maps: [
-      {
-        name: 'E-commerce & Configurador',
-        shortName: 'Loja Online & Checkout Transparente',
-        role: 'Desenvolvedor Full-Stack & UI/UX',
-      },
-    ],
-    site: 'https://almacriativa.netlify.app',
+  freeProjectsNotice: {
+    active: true,
+    title: '🎁 Projetos Pequenos Gratuitos Sob Medida',
+    description:
+      'Tem uma ideia de bot de Discord, site, landing page ou pequeno aplicativo para PC (C#/C++) ou celular? Me chame no Discord ou envie um e-mail! Desenvolvo pequenos projetos de graça para agregar valor, ajudar a comunidade e fortalecer o portfólio.',
   },
 } as const;

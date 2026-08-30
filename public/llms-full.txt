@@ -1,0 +1,100 @@
+# KIOVER — COMPREHENSIVE SOFTWARE ENGINEER & DEVELOPER DOSSIER
+
+## 1. Professional Identity & Contact
+- **Name:** Kiover (GitHub: @safadaooofc)
+- **Primary Roles:** Full-Stack Developer, Desktop Systems Engineer (C# / C++), Mobile Developer, Bot Architect.
+- **Location:** Brazil
+- **Contact Email:** paoteste40@gmail.com
+- **Discord Handle:** kiover
+- **GitHub Profile:** https://github.com/safadaooofc
+- **Availability:** Open for freelance, collaborations, contracts, and pro-bono / free small projects under custom specification.
+
+---
+
+## 2. Technical Capabilities & Technology Stack
+
+### A. Desktop Software (PC) & Systems Programming
+- **C# / .NET:** WinForms, WPF, background workers, custom UI tooling, system utilities.
+- **C++:** Native high-performance applications, file manipulation algorithms, OS-level interaction.
+- **Windows APIs:** Process management, file system listeners, custom desktop automation.
+
+### B. Mobile Applications
+- **Multiplatform Mobile:** React Native, cross-platform mobile interfaces, touch gestures, offline-first architectures.
+- **Mobile UI/UX:** Responsive layouts, adaptive styling, REST API integration.
+
+### C. Full-Stack Web & E-Commerce
+- **Frontend:** Next.js 15 & 16 (App Router, Server Actions), React 19 / 18, TypeScript, Tailwind CSS v4, Zustand with persist middleware, Framer Motion, Vite.
+- **Backend:** Node.js, Express.js, NextAuth v5 (Auth.js) with JWT & Discord OAuth2, Python (FastAPI, standard libraries), Serverless Functions (Netlify).
+- **Databases & ORMs:** PostgreSQL, Prisma ORM (v7), Supabase (Auth, Storage, Database), SQLite, MongoDB.
+- **Payment Gateways & APIs:** AbacatePay (Instant PIX with webhooks), Mercado Pago (transparent checkout with Base64 QR code and polling), Stripe API, Resend (transactional email), Nominatim OpenStreetMap (geocoding & distance calculation).
+- **Security:** In-memory rate limiting, anti-DDoS protection, RBAC (Role-Based Access Control), BCrypt password hashing.
+
+### D. Bot Development & Real-Time Integrations
+- **discord.js (v14):** REST interactions, Slash commands endpoints, Discord OAuth2 auto-join, guild moderation.
+- **discord.py (Python 3.10+):** Modular architectures with Cogs, custom JSON webhook builders, event handlers.
+- **Roblox Luau:** Client/Server network synchronization, HttpService REST bridges to Express backends, data persistence, 60 FPS mobile optimization.
+
+---
+
+## 3. Detailed Portfolio Projects & Case Studies
+
+### Case Study 1: BloodStore — Digital E-Commerce (Sold Project)
+- **Repository:** https://github.com/xsag7/bloodstore3
+- **Owner / Client:** Sold and transferred to @xsag7
+- **Role:** Original Creator & Full-Stack Architect
+- **Tech Stack:** React, TypeScript, Vite, Supabase, PostgreSQL, Netlify Functions.
+- **Key Deliverables:** Automated digital product store with cloud database persistence via Supabase, serverless API execution via Netlify Functions, and clean transfer to commercial buyer.
+- **Development Time:** ~60h
+
+### Case Study 2: Sagaz Site — Digital Goods & Instant PIX Recharging Platform
+- **Repository:** https://github.com/safadaooofc/sagaz-site
+- **Role:** Full-Stack Developer & Bot Architect
+- **Tech Stack:** Next.js 16 (App Router), TypeScript, Tailwind CSS v4, Tailwind UI, PostgreSQL, Prisma v7, NextAuth.js v5, discord.js v14, Resend, AbacatePay REST API.
+- **Key Deliverables:** Automated PIX billing and instant confirmation via Webhook, interactive rewards linked to Discord bot v14, RBAC admin dashboard, and audit logging.
+- **Development Time:** ~90h
+
+### Case Study 3: Luxury Sales — Digital Game Keys E-Commerce
+- **Repository:** https://github.com/safadaooofc/luxury-sales-site
+- **Role:** Full-Stack Developer & UI/UX Designer
+- **Tech Stack:** Next.js 15, React 19, TypeScript, Tailwind CSS, Prisma ORM, PostgreSQL, NextAuth v5, Zustand, Lucide React.
+- **Key Deliverables:** Dual authentication (Credentials + Discord OAuth with automatic guild join), anti-spam rate limiting in memory, complex product variants (Standard/Deluxe, Steam/PSN/Xbox), Zustand global shopping cart with persist, and admin dashboard with sales charts and customer chat logs.
+- **Development Time:** ~85h
+
+### Case Study 4: Alma Criativa Confeitaria — Full-Stack E-Commerce & Product Configurator
+- **Live URL:** https://almacriativa.netlify.app
+- **Role:** Full-Stack Developer
+- **Tech Stack:** React 19, TypeScript, Tailwind CSS, Vite, Mercado Pago API, Nominatim OpenStreetMap API, Framer Motion.
+- **Key Deliverables:** Multi-layer interactive configurators ("Build your Cake", "Build your Party Kit"), transparent Mercado Pago checkout (PIX dynamic Base64 QR code + 4s status polling and credit card), dynamic freight engine calculating distance to headquarters via Nominatim API, and advance-notice calendar.
+- **Development Time:** ~80h
+
+### Case Study 5: LP Community — High-Converting GTA V Store
+- **Repository:** https://github.com/safadaooofc/lp-community
+- **Role:** Frontend Architect & UI/UX Developer
+- **Tech Stack:** React 18, TypeScript, Vite, Tailwind CSS, Framer Motion, Lucide Icons.
+- **Key Deliverables:** Dynamic real-time GTA$ calculator with linear price scaling (R$ 0,50 / 1M), modded outfit/vehicle quantity selector, smart WhatsApp/Discord cart formatter, and verified review carousel.
+- **Development Time:** ~45h
+
+### Case Study 6: Reuel Site & CMS
+- **Repository:** https://github.com/safadaooofc/Site_regras_wl
+- **Demo:** https://reueleberp.discloud.app
+- **Role:** Lead Full-Stack Developer
+- **Tech Stack:** React 19, TypeScript, Node.js, Express, Discord OAuth2, Discloud.
+- **Key Deliverables:** Custom CMS for live rule and team management, Discord REST slash command interactions, and anti-CORS live member proxy.
+- **Development Time:** ~120h
+
+### Case Study 7: Capital do Mato Grosso Roleplay & EB Reuel (Roblox Luau)
+- **Role:** Head of Development
+- **Tech Stack:** Roblox Luau, Express API, JSON Telemetry, Level Design.
+- **Key Deliverables:** Complete persistent economy, custom bank heist system with explosive crafting, police corporation logistics, and 60 FPS mobile script optimization.
+- **Development Time:** ~240h combined
+
+---
+
+## 4. Free Projects / Pro-Bono Initiative
+Kiover actively develops small software projects at **no cost (100% free)** for communities, startups, and content creators. Supported requests include:
+- Discord Bots (moderation, utilities, webhooks, verification)
+- Landing Pages & Showcase Websites
+- Desktop Utility Tools (C# / C++)
+- Mobile Applications & Mobile Layouts
+
+To submit a project proposal, reach out on Discord (`kiover`) or email (`paoteste40@gmail.com`).

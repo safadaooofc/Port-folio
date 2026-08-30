@@ -1,17 +1,18 @@
 import { useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
-import { Github, ExternalLink, Clock, Sparkles, BookOpen, ChevronDown, ChevronUp, ShoppingBag, Terminal } from 'lucide-react';
-import { projects, activeWork, collaborations, type Project, type Collaboration } from '@/data/projects';
+import { Github, ExternalLink, Clock, Sparkles, BookOpen, ChevronDown, ChevronUp, Gift, Laptop, Smartphone, ShoppingBag } from 'lucide-react';
+import { projects, collaborations, type Project, type Collaboration } from '@/data/projects';
+import { profile } from '@/data/profile';
 import { TerminalPrompt } from './terminal/TerminalPrompt';
 
-type FilterType = 'all' | 'ecommerce' | 'web' | 'bot' | 'roblox' | 'collab';
+type FilterType = 'all' | 'ecommerce' | 'desktop' | 'mobile' | 'web' | 'bot' | 'roblox' | 'collab';
 
 function StatusBadge({ status, badge }: { status: string; badge?: string }) {
   if (badge) {
     if (badge.includes('Vendido')) {
       return <span className="text-xs px-2 py-0.5 rounded border border-terminal-amber/50 bg-terminal-amber/10 text-terminal-amber font-mono font-bold">[{badge}]</span>;
     }
-    if (badge.includes('Destaque') || badge.includes('Atual')) {
+    if (badge.includes('Destaque')) {
       return <span className="text-xs px-2 py-0.5 rounded border border-terminal-accent/50 bg-terminal-accent/10 text-terminal-accent font-mono font-bold">[{badge}]</span>;
     }
     if (badge.includes('Collab')) {
@@ -38,10 +39,10 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
     <motion.div
       initial={{ opacity: 0, y: 10 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.25, delay: index * 0.04 }}
+      transition={{ duration: 0.25, delay: index * 0.03 }}
       className={`p-4 rounded border transition-all ${
         project.featured
-          ? 'border-terminal-accent/40 bg-terminal-surface/60 hover:border-terminal-accent shadow-sm'
+          ? 'border-terminal-accent/50 bg-terminal-surface/60 hover:border-terminal-accent shadow-sm'
           : 'border-terminal-border bg-terminal-surface/30 hover:border-terminal-accent/40'
       }`}
     >
@@ -49,7 +50,7 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
         <div>
           <div className="flex items-center gap-2 flex-wrap">
             <span className="text-terminal-accent text-sm">
-              {project.category === 'ecommerce' ? '🛍️' : project.category === 'bot' ? '🤖' : project.category === 'roblox' ? '🎮' : '📁'}
+              {project.category === 'ecommerce' ? '🛍️' : project.category === 'desktop' ? '🖥️' : project.category === 'mobile' ? '📱' : project.category === 'bot' ? '🤖' : project.category === 'roblox' ? '🎮' : '📁'}
             </span>
             <h4 className="text-terminal-text font-bold text-base hover:text-terminal-accent transition-colors">
               {project.title}
@@ -163,39 +164,57 @@ export function Projects() {
   const [filter, setFilter] = useState<FilterType>('all');
 
   const filterTabs: { id: FilterType; label: string; count: number }[] = [
-    { id: 'all', label: '0. todos os projetos', count: activeWork.length + projects.length },
-    { id: 'ecommerce', label: '1. e-commerces & lojas', count: [...activeWork, ...projects].filter(p => p.category === 'ecommerce').length },
-    { id: 'web', label: '2. web full-stack', count: [...activeWork, ...projects].filter(p => p.category === 'web').length },
-    { id: 'bot', label: '3. bots & integrações', count: [...activeWork, ...projects].filter(p => p.category === 'bot').length },
-    { id: 'roblox', label: '4. roblox & games', count: [...activeWork, ...projects].filter(p => p.category === 'roblox' || p.category === 'game').length },
-    { id: 'collab', label: '5. colaborações & collabs', count: collaborations.length },
+    { id: 'all', label: '0. todos os projetos', count: projects.length },
+    { id: 'ecommerce', label: '1. e-commerces & lojas', count: projects.filter(p => p.category === 'ecommerce').length },
+    { id: 'desktop', label: '2. desktop (c# / c++)', count: projects.filter(p => p.category === 'desktop').length },
+    { id: 'mobile', label: '3. mobile apps', count: projects.filter(p => p.category === 'mobile').length },
+    { id: 'bot', label: '4. bots & automações', count: projects.filter(p => p.category === 'bot').length },
+    { id: 'web', label: '5. web apps', count: projects.filter(p => p.category === 'web').length },
+    { id: 'roblox', label: '6. roblox & games', count: projects.filter(p => p.category === 'roblox' || p.category === 'game').length },
+    { id: 'collab', label: '7. colaborações', count: collaborations.length },
   ];
 
   const displayedProjects = filter === 'all'
-    ? [...activeWork, ...projects]
+    ? projects
     : filter === 'collab'
     ? []
     : filter === 'roblox'
-    ? [...activeWork, ...projects].filter(p => p.category === 'roblox' || p.category === 'game')
-    : [...activeWork, ...projects].filter(p => p.category === filter);
+    ? projects.filter(p => p.category === 'roblox' || p.category === 'game')
+    : projects.filter(p => p.category === filter);
 
   return (
     <section className="py-2 space-y-6">
-      {/* Current Work Highlight */}
+      {/* Free Projects Banner */}
       <motion.div
         initial={{ opacity: 0, y: 12 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.35 }}
+        className="p-4 rounded border border-terminal-success/60 bg-terminal-success/10"
       >
-        <TerminalPrompt command="cat ~/work/current_status.md" />
-        <div className="mt-3 text-terminal-text font-bold text-sm mb-3 flex items-center gap-2">
-          <ShoppingBag size={15} className="text-terminal-accent" />
-          <span># Trabalho Atual em Destaque — E-Commerce & Checkout Transparente</span>
-        </div>
-        <div className="space-y-4">
-          {activeWork.map((project, idx) => (
-            <ProjectCard key={project.id} project={project} index={idx} />
-          ))}
+        <div className="flex items-start gap-3">
+          <Gift size={20} className="text-terminal-success flex-shrink-0 mt-0.5" />
+          <div>
+            <h3 className="text-terminal-text font-bold text-sm sm:text-base">
+              {profile.freeProjectsNotice.title}
+            </h3>
+            <p className="text-terminal-muted text-xs sm:text-sm mt-1 leading-relaxed">
+              {profile.freeProjectsNotice.description}
+            </p>
+            <div className="mt-2 flex flex-wrap gap-2 text-xs font-mono">
+              <span className="px-2 py-0.5 rounded border border-terminal-success/40 text-terminal-success bg-terminal-bg/70">
+                ✓ Bots de Discord sob medida
+              </span>
+              <span className="px-2 py-0.5 rounded border border-terminal-success/40 text-terminal-success bg-terminal-bg/70">
+                ✓ Sites e Landing Pages
+              </span>
+              <span className="px-2 py-0.5 rounded border border-terminal-success/40 text-terminal-success bg-terminal-bg/70">
+                ✓ Softwares PC em C# / C++
+              </span>
+              <span className="px-2 py-0.5 rounded border border-terminal-success/40 text-terminal-success bg-terminal-bg/70">
+                ✓ Apps para Celular (Mobile)
+              </span>
+            </div>
+          </div>
         </div>
       </motion.div>
 
@@ -207,7 +226,7 @@ export function Projects() {
       >
         <TerminalPrompt command={`ls -la ~/projects/ --filter=${filter}`} />
         
-        {/* Filter buttons styled like terminal options */}
+        {/* Filter buttons */}
         <div className="mt-3 mb-4 flex flex-wrap gap-2">
           {filterTabs.map((tab) => (
             <button
@@ -234,7 +253,7 @@ export function Projects() {
           </div>
         )}
 
-        {/* Collaborations Section (Visible in All or Collab filter) */}
+        {/* Collaborations Section */}
         {(filter === 'all' || filter === 'collab') && (
           <div className="mt-8 space-y-4">
             <div className="pt-4 border-t border-terminal-border/60">
