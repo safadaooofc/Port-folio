@@ -1,11 +1,10 @@
-# KIOVER — COMPREHENSIVE SOFTWARE ENGINEER & DEVELOPER DOSSIER
+# GUILHERME — COMPREHENSIVE SOFTWARE ENGINEER & DEVELOPER DOSSIER
 
 ## 1. Professional Identity & Contact
-- **Name:** Kiover (GitHub: @safadaooofc)
+- **Name:** Guilherme
 - **Primary Roles:** Full-Stack Developer, Desktop Systems Engineer (C# / C++), Mobile Developer, AI / MCP Architect, Bot Developer.
 - **Location:** Brazil
 - **Contact Email:** paoteste40@gmail.com
-- **Discord Handle:** kiover
 - **GitHub Profile:** https://github.com/safadaooofc
 - **Availability:** Open for freelance, collaborations, contracts, and pro-bono / free small projects under custom specification.
 
