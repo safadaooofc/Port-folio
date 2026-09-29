@@ -3,49 +3,46 @@ import { skills, skillCategories } from '@/data/skills';
 
 export function Skills() {
   return (
-    <section className="py-2">
+    <div className="py-12">
       <motion.div
-        initial={{ opacity: 0, y: 12 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.35 }}
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5 }}
       >
-        <div className="space-y-6">
-          {skillCategories.map((category, catIndex) => {
+        <h2 className="text-3xl font-bold text-slate-900 mb-8">Competências Técnicas</h2>
+        
+        <div className="grid md:grid-cols-2 gap-8">
+          {skillCategories.map((category, idx) => {
             const categorySkills = skills.filter((s) => s.category === category);
+            if (categorySkills.length === 0) return null;
+
             return (
-              <motion.div
+              <motion.div 
                 key={category}
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 0.3, delay: catIndex * 0.08 }}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: idx * 0.1 }}
+                className="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm"
               >
-                <div className="text-terminal-accent text-sm font-bold mb-2">
-                  drwxr-xr-x  {category}/
-                </div>
-                <div className="ml-4 grid grid-cols-1 sm:grid-cols-2 gap-1">
-                  {categorySkills.map((skill, i) => (
-                    <motion.div
+                <h3 className="text-lg font-semibold text-slate-900 mb-5">{category}</h3>
+                <div className="flex flex-wrap gap-2">
+                  {categorySkills.map((skill) => (
+                    <span
                       key={skill.name}
-                      initial={{ opacity: 0, x: -8 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      transition={{ duration: 0.2, delay: 0.02 * i }}
-                      className="flex items-center gap-2 py-1 px-2 rounded hover:bg-terminal-surface transition-colors group"
+                      className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-slate-50 border border-slate-200 text-sm font-medium text-slate-700 hover:border-slate-300 hover:bg-slate-100 transition-colors cursor-default"
                     >
-                      <span className="text-terminal-muted text-xs">-rw-r--r--</span>
-                      <span className="text-base">{skill.icon}</span>
-                      <span className="text-terminal-text group-hover:text-terminal-accent transition-colors text-sm">
-                        {skill.name}
-                      </span>
-                    </motion.div>
+                      <span aria-hidden="true" style={{ color: skill.color }}>{skill.icon}</span>
+                      {skill.name}
+                    </span>
                   ))}
                 </div>
               </motion.div>
             );
           })}
         </div>
-
-        <div className="mt-4 text-terminal-muted text-xs">total {skills.length} skills</div>
       </motion.div>
-    </section>
+    </div>
   );
 }

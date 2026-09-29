@@ -1,13 +1,22 @@
+import { profile } from '@/data/profile';
+
 export function Footer() {
+  const currentYear = new Date().getFullYear();
+
   return (
-    <footer className="relative py-6 px-4 md:px-6 border-t border-terminal-border">
-      <div className="max-w-3xl mx-auto flex flex-col md:flex-row items-center justify-between gap-3 text-xs text-terminal-muted">
-        <span>
-          <span className="text-terminal-text">[kiover@portfolio]</span> uptime: {new Date().getFullYear()}
-        </span>
-        <span>
-          made with {'<3'} by Kiover (safadaoooofc) | exit 0
-        </span>
+    <footer className="border-t border-slate-200 bg-white py-8 mt-12">
+      <div className="max-w-7xl mx-auto px-4 md:px-8 flex flex-col md:flex-row justify-between items-center gap-4">
+        <div className="text-slate-500 text-sm">
+          &copy; {currentYear} {profile.name}. Todos os direitos reservados.
+        </div>
+        <div className="flex gap-4 text-sm font-medium">
+          <a href={profile.links.github} target="_blank" rel="noopener noreferrer" className="text-slate-500 hover:text-slate-900 transition-colors">
+            GitHub
+          </a>
+          <a href={profile.links.email} className="text-slate-500 hover:text-slate-900 transition-colors">
+            E-mail
+          </a>
+        </div>
       </div>
     </footer>
   );

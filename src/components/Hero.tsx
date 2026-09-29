@@ -1,87 +1,71 @@
 import { motion } from 'framer-motion';
-import { Github, MessageCircle, Mail } from 'lucide-react';
+import { ArrowRight, Github, Mail } from 'lucide-react';
 import { profile } from '@/data/profile';
-import { useNavigation } from '@/context/NavigationContext';
-import { TerminalPrompt } from './terminal/TerminalPrompt';
 
 export function Hero() {
-  const { navigateTo } = useNavigation();
+  const scrollTo = (id: string) => {
+    const el = document.getElementById(id);
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
 
   return (
-    <section className="py-2">
+    <div className="flex flex-col justify-center min-h-[70vh]">
       <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.4 }}
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+        className="flex flex-col-reverse md:flex-row items-center justify-between gap-12"
       >
-        <TerminalPrompt command="whoami" />
-        <div className="mt-2 mb-6">
-          <h1 className="text-2xl md:text-3xl font-bold text-terminal-text">{profile.name}</h1>
-          <p className="text-terminal-text mt-1">{profile.title}</p>
-          <p className="text-terminal-muted text-sm mt-1">{profile.tagline}</p>
-        </div>
-      </motion.div>
+        <div className="flex-1">
+          <h1 className="text-5xl md:text-7xl font-bold tracking-tight text-slate-900 mb-6 max-w-4xl leading-tight">
+            Engenharia de Software & <br />
+            <span className="gradient-text">Desenvolvimento Full-Stack</span>
+          </h1>
+          <p className="text-lg md:text-xl text-slate-600 mb-10 max-w-2xl leading-relaxed">
+            {profile.tagline}
+          </p>
 
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.4, delay: 0.15 }}
-      >
-        <TerminalPrompt command="cat status.txt" />
-        <div className="mt-2 mb-6 flex items-center gap-2">
-          <span className="inline-block w-2 h-2 rounded-full bg-terminal-success" />
-          <span className="text-terminal-success">{profile.status}</span>
-        </div>
-      </motion.div>
-
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.4, delay: 0.3 }}
-      >
-        <TerminalPrompt command="ls links/" />
-        <div className="mt-3 flex flex-wrap gap-3">
-          {[
-            { icon: Github, href: profile.links.github, label: 'github/', color: 'text-terminal-accent' },
-            { icon: MessageCircle, href: profile.links.discord, label: 'discord/', color: 'text-terminal-amber' },
-            { icon: Mail, href: profile.links.email, label: 'email/', color: 'text-terminal-text' },
-          ].map(({ icon: Icon, href, label, color }) => (
+        <div className="flex flex-wrap gap-4 items-center">
+          <button
+            onClick={() => scrollTo('projects')}
+            className="flex items-center gap-2 px-6 py-3 bg-indigo-600 text-white rounded-lg font-medium hover:bg-indigo-700 transition-colors shadow-sm shadow-indigo-200"
+          >
+            Ver Projetos <ArrowRight size={18} />
+          </button>
+          
+          <div className="flex items-center gap-3 ml-2">
             <a
-              key={label}
-              href={href}
+              href={profile.links.github}
               target="_blank"
               rel="noopener noreferrer"
-              className={`flex items-center gap-2 px-3 py-1.5 rounded border border-terminal-border hover:border-terminal-accent/50 transition-all ${color} hover:text-terminal-accent`}
-              aria-label={label}
+              className="p-3 text-slate-500 hover:text-slate-900 hover:bg-slate-100 rounded-lg transition-colors border border-transparent hover:border-slate-200"
+              aria-label="GitHub"
             >
-              <Icon size={16} />
-              <span className="text-sm">{label}</span>
+              <Github size={20} />
             </a>
-          ))}
+            <a
+              href={profile.links.email}
+              className="p-3 text-slate-500 hover:text-slate-900 hover:bg-slate-100 rounded-lg transition-colors border border-transparent hover:border-slate-200"
+              aria-label="Email"
+            >
+              <Mail size={20} />
+            </a>
+          </div>
+          </div>
+        </div>
+
+        <div className="md:w-1/3 flex justify-center md:justify-end">
+          <div className="relative w-48 h-48 md:w-64 md:h-64 rounded-full overflow-hidden border-4 border-white shadow-xl">
+            <img 
+              src="/profile.png" 
+              alt="Guilherme Profile" 
+              className="object-cover w-full h-full"
+            />
+          </div>
         </div>
       </motion.div>
-
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.4, delay: 0.45 }}
-        className="mt-6 flex flex-wrap gap-4"
-      >
-        <button
-          type="button"
-          onClick={() => navigateTo('projects')}
-          className="px-5 py-2 text-sm bg-terminal-surface border border-terminal-border text-terminal-text rounded hover:border-terminal-accent/50 hover:text-terminal-accent transition-all"
-        >
-          [ ver projetos ]
-        </button>
-        <button
-          type="button"
-          onClick={() => navigateTo('contact')}
-          className="px-5 py-2 text-sm border border-terminal-border text-terminal-muted rounded hover:border-terminal-accent/30 hover:text-terminal-text transition-all"
-        >
-          [ contato ]
-        </button>
-      </motion.div>
-    </section>
+    </div>
   );
 }

@@ -1,56 +1,79 @@
-import { useState } from 'react';
-import { AnimatePresence, motion } from 'framer-motion';
-import { navLinks } from '@/data/nav';
-import { useNavigation, type ViewId } from '@/context/NavigationContext';
+import { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Menu, X } from 'lucide-react';
+
+const links = [
+  { id: 'home', label: 'Início' },
+  { id: 'about', label: 'Sobre' },
+  { id: 'skills', label: 'Habilidades' },
+  { id: 'projects', label: 'Projetos' },
+  { id: 'contact', label: 'Contato' },
+];
 
 export function Navbar() {
-  const { activeView, navigateTo } = useNavigation();
+  const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState('home');
 
-  const handleNavigate = (id: ViewId) => {
-    navigateTo(id);
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 20);
+      
+      const sections = links.map(l => document.getElementById(l.id));
+      const scrollPosition = window.scrollY + 100;
+      
+      for (const section of sections.reverse()) {
+        if (section && section.offsetTop <= scrollPosition) {
+          setActiveSection(section.id);
+          break;
+        }
+      }
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const scrollTo = (id: string) => {
+    const el = document.getElementById(id);
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth' });
+    }
     setMobileOpen(false);
   };
 
   return (
-    <motion.nav
-      initial={{ y: -100 }}
-      animate={{ y: 0 }}
-      transition={{ duration: 0.6 }}
-      className="fixed top-0 left-0 right-0 z-50 bg-terminal-bg/95 backdrop-blur-sm border-b border-terminal-border"
+    <header
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        scrolled ? 'glass py-3' : 'bg-transparent py-5'
+      }`}
     >
-      <div className="max-w-6xl mx-auto px-4 md:px-6 py-3 flex items-center justify-between">
+      <div className="max-w-7xl mx-auto px-4 md:px-8 flex items-center justify-between">
         <button
-          type="button"
-          onClick={() => handleNavigate('home')}
-          className="text-terminal-text text-sm md:text-base font-bold hover:text-terminal-accent transition-colors"
+          onClick={() => scrollTo('home')}
+          className="text-xl font-bold tracking-tight text-slate-900 hover:text-indigo-600 transition-colors"
         >
-          PS C:\Users\kiover\portfolio&gt;
+          Guilherme<span className="text-indigo-600">.</span>
         </button>
 
-        <div className="hidden md:flex items-center gap-1">
-          {navLinks.map((link) => (
+        <nav className="hidden md:flex items-center gap-8">
+          {links.map((link) => (
             <button
               key={link.id}
-              type="button"
-              onClick={() => handleNavigate(link.id as ViewId)}
-              className={`px-3 py-1.5 text-xs rounded transition-all duration-200 ${
-                activeView === link.id
-                  ? 'text-terminal-text bg-terminal-surface border border-terminal-border'
-                  : 'text-terminal-muted hover:text-terminal-text'
+              onClick={() => scrollTo(link.id)}
+              className={`text-sm font-medium transition-colors ${
+                activeSection === link.id ? 'text-indigo-600' : 'text-slate-600 hover:text-slate-900'
               }`}
             >
-              {link.command}
+              {link.label}
             </button>
           ))}
-        </div>
+        </nav>
 
         <button
-          type="button"
-          className="md:hidden text-terminal-muted hover:text-terminal-text transition-colors text-sm"
+          className="md:hidden p-2 text-slate-600 hover:text-slate-900 transition-colors"
           onClick={() => setMobileOpen(!mobileOpen)}
         >
-          {mobileOpen ? '[x]' : '[menu]'}
+          {mobileOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
       </div>
 
@@ -60,29 +83,24 @@ export function Navbar() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-terminal-bg/98 border-b border-terminal-border"
+            className="md:hidden glass border-t border-slate-200 mt-3"
           >
-            <div className="px-4 py-3 flex flex-col gap-1">
-              <div className="text-terminal-muted text-xs mb-2">PS C:\Users\kiover\portfolio&gt; help</div>
-              {navLinks.map((link) => (
+            <div className="flex flex-col px-4 py-4 gap-4">
+              {links.map((link) => (
                 <button
                   key={link.id}
-                  type="button"
-                  onClick={() => handleNavigate(link.id as ViewId)}
-                  className={`text-left px-3 py-1.5 text-sm rounded transition-all ${
-                    activeView === link.id
-                      ? 'text-terminal-text bg-terminal-surface'
-                      : 'text-terminal-muted hover:text-terminal-text'
+                  onClick={() => scrollTo(link.id)}
+                  className={`text-left text-sm font-medium ${
+                    activeSection === link.id ? 'text-indigo-600' : 'text-slate-600'
                   }`}
                 >
-                  <span className="text-terminal-muted mr-2">&gt;</span>
-                  {link.command}
+                  {link.label}
                 </button>
               ))}
             </div>
           </motion.div>
         )}
       </AnimatePresence>
-    </motion.nav>
+    </header>
   );
 }
