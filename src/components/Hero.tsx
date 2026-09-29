@@ -16,9 +16,9 @@ export function Hero() {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
-        className="flex flex-col-reverse md:flex-row items-center justify-between gap-12"
+        className="flex flex-col-reverse md:flex-row items-center justify-between gap-8 md:gap-12 text-center md:text-left"
       >
-        <div className="flex-1">
+        <div className="flex-1 flex flex-col items-center md:items-start">
           <h1 className="text-5xl md:text-7xl font-bold tracking-tight text-slate-900 mb-6 max-w-4xl leading-tight">
             Engenharia de Software & <br />
             <span className="gradient-text">Desenvolvimento Full-Stack</span>
@@ -56,8 +56,8 @@ export function Hero() {
           </div>
         </div>
 
-        <div className="md:w-1/3 flex justify-center md:justify-end">
-          <div className="relative w-48 h-48 md:w-64 md:h-64 rounded-full overflow-hidden border-4 border-white shadow-xl">
+        <div className="w-full md:w-1/3 flex justify-center md:justify-end mb-4 md:mb-0">
+          <div className="relative w-48 h-48 sm:w-56 sm:h-56 md:w-64 md:h-64 rounded-full overflow-hidden border-4 border-white shadow-xl">
             <img 
               src="/profile.png" 
               alt="Guilherme Profile" 
